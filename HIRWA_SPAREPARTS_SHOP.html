@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HIRWA SPAREPARTS SHOP</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#222;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    background:#111827;
+    color:white;
+    padding:10px 5%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:14px;
+}
+
+.topbar a{
+    color:white;
+    text-decoration:none;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    background:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.1);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    color:#ff0055;
+}
+
+.logo span{
+    color:#111827;
+}
+
+.navlinks{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:#222;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.navlinks a:hover{
+    color:#dc2626;
+}
+
+.cartBtn{
+    border:0;
+    background:#dc2626;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:560px;
+    position:relative;
+    overflow:hidden;
+    background:#111;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity 1s ease;
+    background-size:cover;
+    background-position:center;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.heroContent{
+    position:relative;
+    z-index:10;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 8%;
+    color:white;
+    max-width:800px;
+}
+
+.heroContent h1{
+    font-size:clamp(38px,6vw,70px);
+    margin-bottom:20px;
+}
+
+.heroContent p{
+    font-size:19px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.heroButtons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.primary{
+    background:#dc2626;
+    color:white;
+    border:0;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.whatsapp{
+    background:#25d366;
+    color:white;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.dots{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:8px;
+    z-index:20;
+}
+
+.dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:white;
+    opacity:.4;
+    cursor:pointer;
+}
+
+.dot.active{
+    opacity:1;
+}
+
+/* ================= GENERAL ================= */
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+section{
+    padding:70px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#64748b;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categoryGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.categoryCard{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.categoryCard:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.categoryCard img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.categoryInfo{
+    padding:18px;
+}
+
+.categoryInfo h3{
+    margin-bottom:8px;
+}
+
+.categoryInfo p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* ================= PRODUCTS PAGE ================= */
+
+#productsPage{
+    display:none;
+}
+
+.pageHeader{
+    background:#111827;
+    color:white;
+    padding:50px 5%;
+}
+
+.pageHeader h2{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.pageHeader p{
+    color:#cbd5e1;
+}
+
+.controls{
+    display:flex;
+    gap:15px;
+    margin:30px 0;
+    flex-wrap:wrap;
+}
+
+.backBtn{
+    background:#111827;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:13px 18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.search{
+    flex:1;
+    min-width:250px;
+}
+
+.search input{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.productGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.productImage{
+    position:relative;
+}
+
+.productImage img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.status{
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:6px 9px;
+    border-radius:6px;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.available{
+    background:#16a34a;
+}
+
+.out{
+    background:#dc2626;
+}
+
+.productInfo{
+    padding:16px;
+}
+
+.productInfo h3{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.code{
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:#dc2626;
+    margin-bottom:12px;
+}
+
+.productButtons{
+    display:flex;
+    gap:7px;
+}
+
+.productButtons button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.add{
+    background:#111827;
+    color:white;
+}
+
+.order{
+    background:#25d366;
+    color:white;
+}
+
+.productButtons button:disabled{
+    background:#cbd5e1;
+    cursor:not-allowed;
+}
+
+/* ================= ABOUT ================= */
+
+.infoGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.infoCard{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:14px;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+}
+
+.infoCard .icon{
+    display:none;
+}
+
+/* Real photos replace the stickers in About/Why Choose Us and Contact cards */
+.infoCard .cardPhoto{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 18px;
+    border-radius:16px;
+    box-shadow:0 5px 14px rgba(15,23,42,.14);
+}
+
+.infoCard h3{
+    margin-bottom:10px;
+}
+
+.infoCard p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+/* ================= CART ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:1998;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+    right:-450px;
+    top:0;
+    width:430px;
+    max-width:95%;
+    height:100vh;
+    background:white;
+    z-index:1999;
+    padding:22px;
+    overflow-y:auto;
+    transition:.3s;
+}
+
+.cart.open{
+    right:0;
+}
+
+.cartHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.close{
+    border:none;
+    background:#eee;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.cartItem{
+    display:flex;
+    gap:12px;
+    border-bottom:1px solid #eee;
+    padding:14px 0;
+}
+
+.cartItem img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:7px;
+}
+
+.cartItemInfo{
+    flex:1;
+}
+
+.cartItemInfo h4{
+    margin-bottom:5px;
+}
+
+.cartItemInfo p{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.remove{
+    border:none;
+    background:none;
+    color:#dc2626;
+    cursor:pointer;
+}
+
+.total{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:2px solid #111827;
+}
+
+.total strong{
+    font-size:23px;
+}
+
+.form{
+    margin-top:20px;
+}
+
+.form input{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:1px solid #d1d5db;
+    border-radius:7px;
+}
+
+.orderCart{
+    width:100%;
+    padding:14px;
+    margin-top:8px;
+    border:none;
+    border-radius:8px;
+    background:#25d366;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f172a;
+    color:white;
+    padding:50px 0 25px;
+}
+
+.footerGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+footer a{
+    color:#cbd5e1;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:30px;
+    padding-top:20px;
+    color:#94a3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1050px){
+
+    .categoryGrid,
+    .productGrid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:800px){
+
+    .navlinks{
+        display:none;
+    }
+
+    .categoryGrid,
+    .productGrid,
+    .infoGrid,
+    .footerGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px){
+
+    .categoryGrid,
+    .productGrid,
+    .infoGrid,
+    .footerGrid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        height:520px;
+    }
+
+    .cart{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= TOPBAR ================= -->
+
+<div class="topbar">
+
+    <div>
+         Musanze, Rwanda
+    </div>
+
+    <div>
+
+        📞
+        <a href="tel:0783845189">
+            0783 845 189
+        </a>
+
+        &nbsp; | &nbsp;
+
+        💬
+        <a href="https://wa.me/250783845189" target="_blank">
+            WhatsApp
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        HIRWA <span>SPAREPARTS SHOP</span>
+    </div>
+
+    <ul class="navlinks">
+
+        <li>
+            <a onclick="goHome()">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#categories">
+                Categories
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <button class="cartBtn" onclick="openCart()">
+                🛒 Cart
+                (<span id="cartCount">0</span>)
+            </button>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HOME PAGE ================= -->
+
+<main id="homePage">
+
+
+<!-- ================= HERO SLIDER ================= -->
+
+<section class="hero">
+
+
+    <div
+        class="slide active"
+        style="
+        background-image:url('images/workplace.jpg');
+        "
+    >
+
+        <div class="heroContent">
+
+            <h1>
+                Quality Vehicle Spare Parts
+            </h1>
+
+            <p>
+                Find reliable spare parts in Musanze, Rwanda.
+                Choose your vehicle category, check the price
+                and order directly through WhatsApp.
+            </p>
+
+            <div class="heroButtons">
+
+                <button
+                    class="primary"
+                    onclick="scrollToCategories()"
+                >
+                    SHOP PRODUCTS
+                </button>
+
+                <a
+                    class="whatsapp"
+                    href="https://wa.me/250783845189"
+                    target="_blank"
+                >
+                    💬 WHATSAPP ORDER
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="slide"
+          
+         style="
+         background-image:url('images/meinshop.jpg.jpg');
+        ">
+     
+
+        <div class="heroContent">
+
+            <h1>
+                Truck Spare Parts
+            </h1>
+
+            <p>
+                Sinotruk, Dongfeng, Fuso, Daihatsu,
+                Canta, Isuzu and other vehicle parts.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="slide"
+
+        style="
+        background-image:url('images/onlineshop.jpg');
+        ">
+    
+
+        <div class="heroContent">
+
+            <h1>
+                Easy Online Shopping
+            </h1>
+
+            <p>
+                Add products to your cart or order immediately
+                without adding them to the cart.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="slide"
+        style="
+        background-image:url('images/whatsappimage.jpg');
+        "
+    >
+
+        <div class="heroContent">
+
+            <h1>
+                Fast WhatsApp Ordering
+            </h1>
+
+            <p>
+                Choose your product and send your order directly
+                to our WhatsApp number.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="slide"
+        style="
+        background-image:url('images/shop.jpg.jpg');
+        "
+    >
+
+        <div class="heroContent">
+
+            <h1>
+                HIRWA SPAREPARTS SHOP
+            </h1>
+
+            <p>
+                Your spare-part shop in Musanze, Rwanda.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dots">
+
+        <span
+            class="dot active"
+            onclick="showSlide(0)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(1)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(2)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(3)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(4)"
+        ></span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORY SECTION ================= -->
+
+<section id="categories">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                Shop By Category
+            </h2>
+
+            <p>
+                Click a category to see its products.
+            </p>
+
+        </div>
+
+
+        <div
+            class="categoryGrid"
+            id="categoryGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                Why Choose Us?
+            </h2>
+
+            <p>
+                Simple and convenient spare-parts shopping.
+            </p>
+
+        </div>
+
+
+        <div class="infoGrid">
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/quality.jpg"
+                     alt="Vehicle spare parts">
+
+                <h3>
+                    Quality Parts
+                </h3>
+
+                <p>
+                    Find spare parts for trucks and
+                    other vehicles.
+                </p>
+
+            </div>
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/whatsappordering.jpg"
+                     alt="Smartphone for WhatsApp ordering">
+
+                <h3>
+                    WhatsApp Ordering
+                </h3>
+
+                <p>
+                    Order directly from any product
+                    using WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/mtn.png"
+                     alt="Mobile payment by smartphone">
+
+                <h3>
+                    MTN Mobile Money
+                </h3>
+
+                <p>
+                    MTN Mobile Money:
+                    <strong>0783 845 189</strong>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p>
+                We are located in Musanze, Rwanda.
+            </p>
+
+        </div>
+
+
+        <div class="infoGrid">
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/workplace.jpg"
+                     alt="Town and city location">
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    Musanze, Rwanda
+                </p>
+
+            </div>
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/calling.jpg"
+                     alt="Phone for contacting the shop">
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+
+                    <a href="tel:0783845189">
+                        0783 845 189
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <div class="infoCard">
+
+                <img class="cardPhoto"
+                     src="images/whatsappbusiness.jpg"
+                     alt="Smartphone messaging">
+
+                <h3>
+                    WhatsApp
+                </h3>
+
+                <p>
+
+                    <a
+                        href="https://wa.me/250783845189"
+                        target="_blank"
+                    >
+                        +250 783 845 189
+                    </a>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= PRODUCTS PAGE ================= -->
+
+<section id="productsPage">
+
+
+    <div class="pageHeader">
+
+        <div class="container">
+
+            <h2 id="categoryTitle">
+                Products
+            </h2>
+
+            <p id="categoryDescription">
+                Browse our products.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="controls">
+
+            <button
+                class="backBtn"
+                onclick="goHome()"
+            >
+                ← Back To Home
+            </button>
+
+
+            <div class="search">
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search product..."
+                    oninput="searchProducts()"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="productGrid"
+            id="productGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CART OVERLAY ================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()"
+></div>
+
+
+<!-- ================= CART ================= -->
+
+<aside
+    class="cart"
+    id="cart"
+>
+
+
+    <div class="cartHeader">
+
+        <h2>
+            Your Cart
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="total">
+
+        <p>
+            Total
+        </p>
+
+        <strong id="cartTotal">
+            0 RWF
+        </strong>
+
+    </div>
+
+
+    <div class="form">
+
+        <h3>
+            Customer Information
+        </h3>
+
+
+        <input
+            id="customerName"
+            type="text"
+            placeholder="Enter your full name"
+        >
+
+
+        <input
+            id="customerPhone"
+            type="text"
+            placeholder="Enter your phone number"
+        >
+
+
+        <button
+            class="orderCart"
+            onclick="orderCart()"
+        >
+            💬 ORDER CART ON WHATSAPP
+        </button>
+
+
+        <p
+            style="
+            color:#64748b;
+            font-size:13px;
+            margin-top:12px;
+            "
+        >
+            MTN Mobile Money:
+            <strong>0783 845 189</strong>
+        </p>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footerGrid">
+
+
+            <div>
+
+                <h3>
+                    HIRWA SPAREPARTS SHOP
+                </h3>
+
+                <p>
+                    Quality vehicle spare parts
+                    in Musanze, Rwanda.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    Musanze, Rwanda
+                </p>
+
+                <p>
+                    📞 0783 845 189
+                </p>
+
+                <p>
+                    💬 +250 783 845 189
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Payment
+                </h3>
+
+                <p>
+                    MTN Mobile Money
+                </p>
+
+                <p>
+                    <strong>
+                        0783 845 189
+                    </strong>
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Musanze Auto Parts.
+            All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ========================================================
+   CATEGORIES
+======================================================== */
+
+const categories = [
+
+    {
+        id:"sinotruk",
+        name:"SINOTRUCK",
+        count:60,
+        image:"images/SINOTRUK.webp",
+        description:"Sinotruk / HOWO spare parts"
+    },
+
+    {
+        id:"dongfeng",
+        name:"DONGFENG",
+        count:60,
+        image:"images/dongfengcabin.jpg",
+        description:"Dongfeng truck spare parts"
+    },
+
+    {
+        id:"fuso",
+        name:"FUSO",
+        count:60,
+        image:"images/fusocabin.jpg",
+        description:"Fuso truck spare parts"
+    },
+
+    {
+        id:"daihatsu",
+        name:"DAIHATSU",
+        count:60,
+        image:"images/daihantsucabin.jpg",
+        description:"Daihatsu spare parts"
+    },
+
+    {
+        id:"canta",
+        name:"CANTA",
+        count:20,
+        image:"images/cantacabin.jpg",
+        description:"Canta spare parts"
+    },
+
+    {
+        id:"engineoil",
+        name:"ENGINE OILS",
+        count:20,
+        image:"images/engineoil.jpg",
+        description:"Engine oils and lubricants"
+    },
+
+    
+    {
+        id:"isuzu",
+        name:" OTHER ",
+        count:60,
+        image:"https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=80",
+        description:"Isuzu truck spare parts"
+    }
+
+];
+
+
+/* ========================================================
+   PRODUCT NAMES
+======================================================== */
+
+const partNames = [
+
+"Oil Filter",
+"Air Filter",
+"Fuel Filter",
+"Brake Pad",
+"Brake Disc",
+"Clutch Plate",
+"Clutch Cover",
+"Clutch Bearing",
+"Water Pump",
+"Radiator",
+"Alternator",
+"Starter Motor",
+"Shock Absorber",
+"Wheel Bearing",
+"Head Lamp",
+"Tail Lamp",
+"Fan Belt",
+"Timing Belt",
+"Brake Shoe",
+"Brake Drum",
+"Steering Rod",
+"Tie Rod End",
+"Ball Joint",
+"Universal Joint",
+"King Pin",
+"Leaf Spring",
+"Turbocharger",
+"Injector",
+"Fuel Pump",
+"Thermostat",
+"Gasket Set",
+"Cylinder Head",
+"Piston Ring",
+"Engine Mount",
+"Gear Lever",
+"Gearbox Mount",
+"Clutch Master Cylinder",
+"Clutch Slave Cylinder",
+"Brake Master Cylinder",
+"Brake Booster",
+"Hub Assembly",
+"Axle Shaft",
+"Differential Gear",
+"Side Mirror",
+"Wiper Blade",
+"Door Handle",
+"Horn",
+"Battery",
+"Fuse Box",
+"Relay",
+"Temperature Sensor",
+"Oil Pressure Sensor",
+"Speed Sensor",
+"ABS Sensor",
+"Radiator Hose",
+"Fuel Hose",
+"Air Hose",
+"Bumper",
+"Grille",
+"Mudguard"
+
+];
+
+
+const oilNames = [
+
+"15W-40 Diesel Engine Oil",
+"10W-40 Engine Oil",
+"20W-50 Engine Oil",
+"5W-30 Engine Oil",
+"5W-40 Engine Oil",
+"ATF Transmission Oil",
+"Gear Oil 80W-90",
+"Gear Oil 85W-140",
+"Hydraulic Oil",
+"Brake Fluid",
+"Coolant",
+"Power Steering Fluid",
+"Transmission Fluid",
+"Synthetic Engine Oil",
+"Heavy Duty Diesel Oil",
+"Truck Engine Oil",
+"Premium Motor Oil",
+"Diesel Lubricant",
+"Universal Engine Oil",
+"Long Life Coolant"
+
+];
+
+
+/* ========================================================
+   PRODUCTS DATABASE
+======================================================== */
+
+let products = [];
+
+function generateProducts(){
+
+    categories.forEach(category => {
+
+        for(let i=1;i<=category.count;i++){
+
+            let productName;
+
+            if(category.id==="engineoil"){
+
+                productName =
+                oilNames[i-1];
+
+            }else{
+
+                productName =
+                partNames[(i-1)%partNames.length];
+
+            }
+
+
+            const product = {
+
+                id:
+                category.id+"-"+i,
+
+                category:
+                category.id,
+
+                name:
+                category.name+" "+productName,
+
+                code:
+                category.name
+                .substring(0,3)
+                .toUpperCase()
+                +"-"+
+                String(i).padStart(3,"0"),
+
+                price:
+                15000+
+                ((i*2750)%135000),
+
+                available:
+                i%9!==0,
+
+                // A unique image URL for each product. The lock value keeps each product's image distinct.
+                image:
+                `https://loremflickr.com/600/400/automotive,car,parts?lock=${encodeURIComponent(category.id + "-" + i)}`
+
+            };
+
+
+            products.push(product);
+
+        }
+
+    });
+
+}
+
+generateProducts();
+
+
+/* ========================================================
+   DISPLAY CATEGORIES
+======================================================== */
+
+function displayCategories(){
+
+    const grid =
+    document.getElementById("categoryGrid");
+
+    grid.innerHTML="";
+
+
+    categories.forEach(category => {
+
+        const card =
+        document.createElement("div");
+
+        card.className="categoryCard";
+
+        card.onclick=()=>{
+            openCategory(category.id);
+        };
+
+
+        card.innerHTML=`
+
+            <img
+                src="${category.image}"
+                alt="${category.name}"
+            >
+
+            <div class="categoryInfo">
+
+                <h3>
+                    ${category.name}
+                </h3>
+
+                <p>
+                    ${category.description}
+                </p>
+
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+displayCategories();
+
+
+/* ========================================================
+   OPEN CATEGORY
+======================================================== */
+
+let currentCategory="";
+
+
+function openCategory(id){
+
+    currentCategory=id;
+
+
+    const category =
+    categories.find(
+        c => c.id===id
+    );
+
+
+    document.getElementById("homePage")
+    .style.display="none";
+
+
+    document.getElementById("productsPage")
+    .style.display="block";
+
+
+    document.getElementById("categoryTitle")
+    .textContent=category.name;
+
+
+    document.getElementById("categoryDescription")
+    .textContent=category.description;
+
+
+    document.getElementById("searchInput")
+    .value="";
+
+
+    displayProducts(id);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ========================================================
+   DISPLAY PRODUCTS
+======================================================== */
+
+function displayProducts(categoryId,search=""){
+
+    const grid =
+    document.getElementById("productGrid");
+
+    grid.innerHTML="";
+
+
+    let list =
+    products.filter(
+        p=>p.category===categoryId
+    );
+
+
+    if(search.trim()!==""){
+
+        list =
+        list.filter(product=>
+
+            product.name
+            .toLowerCase()
+            .includes(search.toLowerCase())
+
+            ||
+
+            product.code
+            .toLowerCase()
+            .includes(search.toLowerCase())
+
+        );
+
+    }
+
+
+    list.forEach(product => {
+
+
+        const card =
+        document.createElement("div");
+
+        card.className="product";
+
+
+        card.innerHTML=`
+
+            <div class="productImage">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+
+
+            </div>
+
+
+            <div class="productInfo">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="code">
+                    Code: ${product.code}
+                </div>
+
+                <div class="price">
+                    ${product.price.toLocaleString()} RWF
+                </div>
+
+
+                <div class="productButtons">
+
+                    <button
+                        class="add"
+                        onclick="
+                        addToCart('${product.id}')
+                        "
+                    >
+                        🛒 Cart
+                    </button>
+
+
+                    <button
+                        class="order"
+                        onclick="
+                        instantOrder('${product.id}')
+                        "
+                    >
+                        💬 Order
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+
+    if(list.length===0){
+
+        grid.innerHTML=`
+
+            <div
+                style="
+                grid-column:1/-1;
+                background:white;
+                padding:50px;
+                text-align:center;
+                border-radius:10px;
+                "
+            >
+
+                <h3>
+                    No product found
+                </h3>
+
+                <p
+                    style="
+                    margin-top:10px;
+                    color:#64748b;
+                    "
+                >
+                    Try another search.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ========================================================
+   SEARCH
+======================================================== */
+
+function searchProducts(){
+
+    const text =
+    document.getElementById("searchInput").value;
+
+    displayProducts(
+        currentCategory,
+        text
+    );
+
+}
+
+
+/* ========================================================
+   CART
+======================================================== */
+
+let cartItems=[];
+
+
+function addToCart(id){
+
+    const product =
+    products.find(
+        p=>p.id===id
+    );
+
+
+    if(!product){
+        return;
+    }
+
+
+    const existing =
+    cartItems.find(
+        item=>item.id===id
+    );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cartItems.push({
+
+            ...product,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+function removeFromCart(id){
+
+    cartItems =
+    cartItems.filter(
+        item=>item.id!==id
+    );
+
+    updateCart();
+
+}
+
+
+function updateCart(){
+
+    const container =
+    document.getElementById("cartItems");
+
+    container.innerHTML="";
+
+
+    let total=0;
+
+    let count=0;
+
+
+    cartItems.forEach(item=>{
+
+        total +=
+        item.price*item.quantity;
+
+        count += item.quantity;
+
+
+        const div =
+        document.createElement("div");
+
+        div.className="cartItem";
+
+
+        div.innerHTML=`
+
+            <img
+                src="${item.image}"
+                alt="${item.name}"
+            >
+
+            <div class="cartItemInfo">
+
+                <h4>
+                    ${item.name}
+                </h4>
+
+                <p>
+                    ${item.price.toLocaleString()} RWF
+                </p>
+
+                <small>
+                    Quantity:
+                    ${item.quantity}
+                </small>
+
+            </div>
+
+            <button
+                class="remove"
+                onclick="
+                removeFromCart('${item.id}')
+                "
+            >
+                Remove
+            </button>
+
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+
+    if(cartItems.length===0){
+
+        container.innerHTML=`
+
+            <div
+                style="
+                text-align:center;
+                padding:50px 10px;
+                color:#64748b;
+                "
+            >
+
+                <div style="font-size:45px;">
+                    🛒
+                </div>
+
+                <p>
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    document.getElementById("cartCount")
+    .textContent=count;
+
+
+    document.getElementById("cartTotal")
+    .textContent=
+    total.toLocaleString()+
+    " RWF";
+
+}
+
+
+function openCart(){
+
+    document
+    .getElementById("cart")
+    .classList.add("open");
+
+    document
+    .getElementById("overlay")
+    .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+    .getElementById("cart")
+    .classList.remove("open");
+
+    document
+    .getElementById("overlay")
+    .classList.remove("show");
+
+}
+
+
+/* ========================================================
+   INSTANT WHATSAPP ORDER
+======================================================== */
+
+function instantOrder(id){
+
+    const product =
+    products.find(
+        p=>p.id===id
+    );
+
+
+    if(!product){
+        alert("Product not found.");
+        return;
+    }
+
+    const customerName =
+    prompt(
+        "Enter your full name:"
+    );
+
+
+    if(!customerName){
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    const phone =
+    prompt(
+        "Enter your phone number:"
+    );
+
+
+    const message=
+
+`Hello HIRWA SPAREPARTS SHOP,
+
+I want to order this product.
+
+PRODUCT:
+${product.name}
+
+CODE:
+${product.code}
+
+PRICE:
+${product.price.toLocaleString()} RWF
+
+CUSTOMER NAME:
+${customerName}
+
+CUSTOMER PHONE:
+${phone || "Not provided"}
+
+MTN MOBILE MONEY:
+0783 845 189
+
+Please confirm my order.
+
+Thank you.`;
+
+
+    const url=
+    "https://wa.me/250783845189?text="
+    +
+    encodeURIComponent(message);
+
+
+    // Navigate directly to WhatsApp in the current tab.
+    // This avoids popup blockers that can block window.open()
+    // after the customer has answered the prompt dialogs.
+    window.location.href = url;
+
+}
+
+
+/* ========================================================
+   WHATSAPP CART ORDER
+======================================================== */
+
+function orderCart(){
+
+    if(cartItems.length===0){
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+    document
+    .getElementById("customerName")
+    .value.trim();
+
+
+    const phone =
+    document
+    .getElementById("customerPhone")
+    .value.trim();
+
+
+    if(!name){
+
+        alert(
+            "Please enter your full name."
+        );
+
+        return;
+
+    }
+
+
+    let message=
+`Hello HIRWA SPAREPARTS SHOP,
+
+I want to place an order.
+
+CUSTOMER NAME:
+${name}
+
+PHONE:
+${phone || "Not provided"}
+
+PRODUCTS:
+
+`;
+
+
+    let total=0;
+
+
+    cartItems.forEach((item,index)=>{
+
+        const subtotal =
+        item.price*item.quantity;
+
+        total+=subtotal;
+
+
+        message +=
+
+`${index+1}.
+${item.name}
+Code: ${item.code}
+Quantity: ${item.quantity}
+Price: ${item.price.toLocaleString()} RWF
+Subtotal: ${subtotal.toLocaleString()} RWF
+
+`;
+
+    });
+
+
+    message +=
+
+`TOTAL:
+${total.toLocaleString()} RWF
+
+MTN MOBILE MONEY:
+0783 845 189
+
+Please confirm availability and my order.
+
+Thank you.`;
+
+
+    const url =
+    "https://wa.me/250783845189?text="
+    +
+    encodeURIComponent(message);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* ========================================================
+   RETURN HOME
+======================================================== */
+
+function goHome(){
+
+    document
+    .getElementById("homePage")
+    .style.display="block";
+
+
+    document
+    .getElementById("productsPage")
+    .style.display="none";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ========================================================
+   SCROLL TO CATEGORIES
+======================================================== */
+
+function scrollToCategories(){
+
+    document
+    .getElementById("categories")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ========================================================
+   HERO SLIDER
+======================================================== */
+
+let slideIndex=0;
+
+
+const slides =
+document.querySelectorAll(".slide");
+
+
+const dots =
+document.querySelectorAll(".dot");
+
+
+function showSlide(index){
+
+    slides.forEach(
+        slide =>
+        slide.classList.remove("active")
+    );
+
+
+    dots.forEach(
+        dot =>
+        dot.classList.remove("active")
+    );
+
+
+    slides[index]
+    .classList.add("active");
+
+
+    dots[index]
+    .classList.add("active");
+
+
+    slideIndex=index;
+
+}
+
+
+function nextSlide(){
+
+    slideIndex++;
+
+    if(slideIndex>=slides.length){
+
+        slideIndex=0;
+
+    }
+
+    showSlide(slideIndex);
+
+}
+
+
+setInterval(
+    nextSlide,
+    5000
+);
+
+
+/* ========================================================
+   INITIAL CART
+======================================================== */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
