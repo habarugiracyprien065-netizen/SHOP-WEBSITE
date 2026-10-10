@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -321,6 +321,10 @@ section{
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
+.productTitle{
+    padding-bottom:8px;
+}
+
 .productImage{
     position:relative;
 }
@@ -329,6 +333,37 @@ section{
     width:100%;
     height:190px;
     object-fit:cover;
+}
+
+/* Helpful placeholder shown until the matching local product photo is added. */
+.missingProductImage{
+    width:100%;
+    height:190px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-align:center;
+    background:#eef2f7;
+    color:#475569;
+    overflow-wrap:anywhere;
+}
+
+.missingProductImage .photoIcon{
+    font-size:38px;
+    line-height:1;
+}
+
+.missingProductImage strong{
+    color:#111827;
+    font-size:14px;
+}
+
+.missingProductImage small{
+    font-size:11px;
+    line-height:1.4;
 }
 
 .status{
@@ -417,19 +452,21 @@ section{
     box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
 
-.infoCard .icon{
-    display:none;
+/* Small photo-icons used in the About and Contact cards */
+.cardPhoto{
+    display:block;
+    width:76px;
+    height:76px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:0 auto 14px;
+    background:#f1f5f9;
+    border:3px solid #eef2f7;
 }
 
-/* Real photos replace the stickers in About/Why Choose Us and Contact cards */
-.infoCard .cardPhoto{
-    width:100px;
-    height:100px;
-    object-fit:cover;
-    display:block;
-    margin:0 auto 18px;
-    border-radius:16px;
-    box-shadow:0 5px 14px rgba(15,23,42,.14);
+.infoCard .icon{
+    font-size:45px;
+    margin-bottom:10px;
 }
 
 .infoCard h3{
@@ -515,6 +552,25 @@ section{
 .cartItemInfo p{
     color:#dc2626;
     font-weight:bold;
+}
+
+.quantityControls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:7px;
+    font-size:13px;
+}
+
+.quantityButton{
+    width:26px;
+    height:26px;
+    border:1px solid #d1d5db;
+    border-radius:6px;
+    background:#f9fafb;
+    color:#111827;
+    font-size:17px;
+    cursor:pointer;
 }
 
 .remove{
@@ -818,7 +874,7 @@ footer a{
     <div
         class="slide"
         style="
-        background-image:url('images/whatsappimage.jpg');
+        background-image:url('images/whatsappbusiness.jpg');
         "
     >
 
@@ -841,7 +897,7 @@ footer a{
     <div
         class="slide"
         style="
-        background-image:url('images/shop.jpg.jpg');
+        background-image:url('images/workplace.jpg');
         "
     >
 
@@ -924,174 +980,63 @@ footer a{
 <!-- ================= ABOUT ================= -->
 
 <section id="about">
-
     <div class="container">
-
         <div class="title">
-
-            <h2>
-                Why Choose Us?
-            </h2>
-
-            <p>
-                Simple and convenient spare-parts shopping.
-            </p>
-
+            <h2>Why Choose Us?</h2>
+            <p>Simple and convenient spare-parts shopping.</p>
         </div>
-
 
         <div class="infoGrid">
-
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/quality.jpg"
-                     alt="Vehicle spare parts">
-
-                <h3>
-                    Quality Parts
-                </h3>
-
-                <p>
-                    Find spare parts for trucks and
-                    other vehicles.
-                </p>
-
+                <img class="cardPhoto" src="images/quality.jpg" alt="Vehicle spare parts" loading="lazy">
+                <h3>Quality Parts</h3>
+                <p>Find spare parts for trucks and other vehicles.</p>
             </div>
 
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/whatsappordering.jpg"
-                     alt="Smartphone for WhatsApp ordering">
-
-                <h3>
-                    WhatsApp Ordering
-                </h3>
-
-                <p>
-                    Order directly from any product
-                    using WhatsApp.
-                </p>
-
+                <img class="cardPhoto" src="images/whatsappordering.jpg" alt="Smartphone for WhatsApp ordering" loading="lazy">
+                <h3>WhatsApp Ordering</h3>
+                <p>Order directly from any product using WhatsApp.</p>
             </div>
 
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/mtn.png"
-                     alt="Mobile payment by smartphone">
-
-                <h3>
-                    MTN Mobile Money
-                </h3>
-
-                <p>
-                    MTN Mobile Money:
-                    <strong>0783 845 189</strong>
-                </p>
-
+                <img class="cardPhoto" src="images/mtn.png" alt="Mobile payment by smartphone" loading="lazy">
+                <h3>MTN Mobile Money</h3>
+                <p>MTN Mobile Money: <strong>0783 845 189</strong></p>
             </div>
-
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- ================= CONTACT ================= -->
 
 <section id="contact">
-
     <div class="container">
-
         <div class="title">
-
-            <h2>
-                Contact Us
-            </h2>
-
-            <p>
-                We are located in Musanze, Rwanda.
-            </p>
-
+            <h2>Contact Us</h2>
+            <p>We are located in Musanze, Rwanda.</p>
         </div>
-
 
         <div class="infoGrid">
-
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/workplace.jpg"
-                     alt="Town and city location">
-
-                <h3>
-                    Location
-                </h3>
-
-                <p>
-                    Musanze, Rwanda
-                </p>
-
+                <img class="cardPhoto" src="images/workplace.jpg" alt="Town and city location" loading="lazy">
+                <h3>Location</h3>
+                <p>Musanze, Rwanda</p>
             </div>
 
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/calling.jpg"
-                     alt="Phone for contacting the shop">
-
-                <h3>
-                    Phone
-                </h3>
-
-                <p>
-
-                    <a href="tel:0783845189">
-                        0783 845 189
-                    </a>
-
-                </p>
-
+                <img class="cardPhoto" src="images/calling.jpg" alt="Phone for contacting the shop" loading="lazy">
+                <h3>Phone</h3>
+                <p><a href="tel:+250783845189">0783 845 189</a></p>
             </div>
 
-
             <div class="infoCard">
-
-                <img class="cardPhoto"
-                     src="images/whatsappbusiness.jpg"
-                     alt="Smartphone messaging">
-
-                <h3>
-                    WhatsApp
-                </h3>
-
-                <p>
-
-                    <a
-                        href="https://wa.me/250783845189"
-                        target="_blank"
-                    >
-                        +250 783 845 189
-                    </a>
-
-                </p>
-
+                <img class="cardPhoto" src="images/whatsappbusiness.jpg" alt="Smartphone messaging" loading="lazy">
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/250783845189" target="_blank" rel="noopener noreferrer">+250 783 845 189</a></p>
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
 </main>
@@ -1338,7 +1283,7 @@ const categories = [
 
     {
         id:"sinotruk",
-        name:"SINOTRUCK",
+        name:"Sinotruk",
         count:60,
         image:"images/SINOTRUK.webp",
         description:"Sinotruk / HOWO spare parts"
@@ -1346,7 +1291,7 @@ const categories = [
 
     {
         id:"dongfeng",
-        name:"DONGFENG",
+        name:"Dongfeng",
         count:60,
         image:"images/dongfengcabin.jpg",
         description:"Dongfeng truck spare parts"
@@ -1354,7 +1299,7 @@ const categories = [
 
     {
         id:"fuso",
-        name:"FUSO",
+        name:"Fuso",
         count:60,
         image:"images/fusocabin.jpg",
         description:"Fuso truck spare parts"
@@ -1362,7 +1307,7 @@ const categories = [
 
     {
         id:"daihatsu",
-        name:"DAIHATSU",
+        name:"Daihatsu",
         count:60,
         image:"images/daihantsucabin.jpg",
         description:"Daihatsu spare parts"
@@ -1370,24 +1315,31 @@ const categories = [
 
     {
         id:"canta",
-        name:"CANTA",
-        count:20,
+        name:"Canta",
+        count:60,
         image:"images/cantacabin.jpg",
         description:"Canta spare parts"
     },
 
     {
         id:"engineoil",
-        name:"ENGINE OILS",
-        count:20,
+        name:"Engine Oils",
+        count:60,
         image:"images/engineoil.jpg",
         description:"Engine oils and lubricants"
     },
 
-    
+    {
+        id:"other",
+        name:"Other Pieces",
+        count:60,
+        image:"https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
+        description:"Other vehicle spare parts"
+    },
+
     {
         id:"isuzu",
-        name:" OTHER ",
+        name:"Isuzu",
         count:60,
         image:"https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=80",
         description:"Isuzu truck spare parts"
@@ -1493,73 +1445,5313 @@ const oilNames = [
 
 
 /* ========================================================
-   PRODUCTS DATABASE
+   PRODUCTS DATABASE — EDIT EACH PRODUCT'S IMAGE DIRECTLY HERE
+   Replace the image URL below each product name with either:
+   1) an online image URL, e.g. "https://example.com/photo.jpg"
+   2) a local project image, e.g. "images/products/my-photo.jpg"
+   Keep the comma after the image line.
 ======================================================== */
 
-let products = [];
+const products = [
+    {
+        id: "sinotruk-1",
+        category: "sinotruk",
+        name: "Sinotruk Oil Filter",
+        
+        image: "images/oilfilter.jpg",
 
-function generateProducts(){
+        code: "SIN-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "sinotruk-2",
+        category: "sinotruk",
+        name: "Sinotruk Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "images/airfilter.jpg",
 
-    categories.forEach(category => {
+        code: "SIN-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "sinotruk-3",
+        category: "sinotruk",
+        name: "Sinotruk Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "images/fuelfilter.jpg",
 
-        for(let i=1;i<=category.count;i++){
+        code: "SIN-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "sinotruk-4",
+        category: "sinotruk",
+        name: "Sinotruk Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-4",
 
-            let productName;
+        code: "SIN-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "sinotruk-5",
+        category: "sinotruk",
+        name: "Sinotruk Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-5",
 
-            if(category.id==="engineoil"){
+        code: "SIN-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "sinotruk-6",
+        category: "sinotruk",
+        name: "Sinotruk Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-6",
 
-                productName =
-                oilNames[i-1];
+        code: "SIN-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "sinotruk-7",
+        category: "sinotruk",
+        name: "Sinotruk Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-7",
 
-            }else{
+        code: "SIN-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "sinotruk-8",
+        category: "sinotruk",
+        name: "Sinotruk Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "images/clutchbearing.jpg",
 
-                productName =
-                partNames[(i-1)%partNames.length];
+        code: "SIN-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "sinotruk-9",
+        category: "sinotruk",
+        name: "Sinotruk Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-9",
 
-            }
+        code: "SIN-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "sinotruk-10",
+        category: "sinotruk",
+        name: "Sinotruk Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-10",
+
+        code: "SIN-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "sinotruk-11",
+        category: "sinotruk",
+        name: "Sinotruk Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-11",
+
+        code: "SIN-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "sinotruk-12",
+        category: "sinotruk",
+        name: "Sinotruk Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-12",
+
+        code: "SIN-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "sinotruk-13",
+        category: "sinotruk",
+        name: "Sinotruk Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-13",
+
+        code: "SIN-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "sinotruk-14",
+        category: "sinotruk",
+        name: "Sinotruk Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-14",
+
+        code: "SIN-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "sinotruk-15",
+        category: "sinotruk",
+        name: "Sinotruk Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-15",
+
+        code: "SIN-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "sinotruk-16",
+        category: "sinotruk",
+        name: "Sinotruk Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-16",
+
+        code: "SIN-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "sinotruk-17",
+        category: "sinotruk",
+        name: "Sinotruk Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-17",
+
+        code: "SIN-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "sinotruk-18",
+        category: "sinotruk",
+        name: "Sinotruk Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-18",
+
+        code: "SIN-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "sinotruk-19",
+        category: "sinotruk",
+        name: "Sinotruk Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-19",
+
+        code: "SIN-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "sinotruk-20",
+        category: "sinotruk",
+        name: "Sinotruk Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-20",
+
+        code: "SIN-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "sinotruk-21",
+        category: "sinotruk",
+        name: "Sinotruk Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-21",
+
+        code: "SIN-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "sinotruk-22",
+        category: "sinotruk",
+        name: "Sinotruk Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-22",
+
+        code: "SIN-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "sinotruk-23",
+        category: "sinotruk",
+        name: "Sinotruk Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-23",
+
+        code: "SIN-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "sinotruk-24",
+        category: "sinotruk",
+        name: "Sinotruk Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-24",
+
+        code: "SIN-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "sinotruk-25",
+        category: "sinotruk",
+        name: "Sinotruk King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-25",
+
+        code: "SIN-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "sinotruk-26",
+        category: "sinotruk",
+        name: "Sinotruk Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-26",
+
+        code: "SIN-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "sinotruk-27",
+        category: "sinotruk",
+        name: "Sinotruk Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-27",
+
+        code: "SIN-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "sinotruk-28",
+        category: "sinotruk",
+        name: "Sinotruk Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-28",
+
+        code: "SIN-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "sinotruk-29",
+        category: "sinotruk",
+        name: "Sinotruk Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-29",
+
+        code: "SIN-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "sinotruk-30",
+        category: "sinotruk",
+        name: "Sinotruk Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-30",
+
+        code: "SIN-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "sinotruk-31",
+        category: "sinotruk",
+        name: "Sinotruk Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-31",
+
+        code: "SIN-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "sinotruk-32",
+        category: "sinotruk",
+        name: "Sinotruk Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-32",
+
+        code: "SIN-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "sinotruk-33",
+        category: "sinotruk",
+        name: "Sinotruk Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-33",
+
+        code: "SIN-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "sinotruk-34",
+        category: "sinotruk",
+        name: "Sinotruk Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-34",
+
+        code: "SIN-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "sinotruk-35",
+        category: "sinotruk",
+        name: "Sinotruk Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-35",
+
+        code: "SIN-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "sinotruk-36",
+        category: "sinotruk",
+        name: "Sinotruk Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-36",
+
+        code: "SIN-036",
+        price: 114000,
+        available: false
+    },
+    {
+        id: "sinotruk-37",
+        category: "sinotruk",
+        name: "Sinotruk Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-37",
+
+        code: "SIN-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "sinotruk-38",
+        category: "sinotruk",
+        name: "Sinotruk Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-38",
+
+        code: "SIN-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "sinotruk-39",
+        category: "sinotruk",
+        name: "Sinotruk Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-39",
+
+        code: "SIN-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "sinotruk-40",
+        category: "sinotruk",
+        name: "Sinotruk Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-40",
+
+        code: "SIN-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "sinotruk-41",
+        category: "sinotruk",
+        name: "Sinotruk Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-41",
+
+        code: "SIN-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "sinotruk-42",
+        category: "sinotruk",
+        name: "Sinotruk Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-42",
+
+        code: "SIN-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "sinotruk-43",
+        category: "sinotruk",
+        name: "Sinotruk Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-43",
+
+        code: "SIN-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "sinotruk-44",
+        category: "sinotruk",
+        name: "Sinotruk Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-44",
+
+        code: "SIN-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "sinotruk-45",
+        category: "sinotruk",
+        name: "Sinotruk Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-45",
+
+        code: "SIN-045",
+        price: 138750,
+        available: false
+    },
+    {
+        id: "sinotruk-46",
+        category: "sinotruk",
+        name: "Sinotruk Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-46",
+
+        code: "SIN-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "sinotruk-47",
+        category: "sinotruk",
+        name: "Sinotruk Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-47",
+
+        code: "SIN-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "sinotruk-48",
+        category: "sinotruk",
+        name: "Sinotruk Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-48",
+
+        code: "SIN-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "sinotruk-49",
+        category: "sinotruk",
+        name: "Sinotruk Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-49",
+
+        code: "SIN-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "sinotruk-50",
+        category: "sinotruk",
+        name: "Sinotruk Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-50",
+
+        code: "SIN-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "sinotruk-51",
+        category: "sinotruk",
+        name: "Sinotruk Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-51",
+
+        code: "SIN-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "sinotruk-52",
+        category: "sinotruk",
+        name: "Sinotruk Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-52",
+
+        code: "SIN-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "sinotruk-53",
+        category: "sinotruk",
+        name: "Sinotruk Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-53",
+
+        code: "SIN-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "sinotruk-54",
+        category: "sinotruk",
+        name: "Sinotruk ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-54",
+
+        code: "SIN-054",
+        price: 28500,
+        available: false
+    },
+    {
+        id: "sinotruk-55",
+        category: "sinotruk",
+        name: "Sinotruk Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-55",
+
+        code: "SIN-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "sinotruk-56",
+        category: "sinotruk",
+        name: "Sinotruk Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-56",
+
+        code: "SIN-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "sinotruk-57",
+        category: "sinotruk",
+        name: "Sinotruk Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-57",
+
+        code: "SIN-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "sinotruk-58",
+        category: "sinotruk",
+        name: "Sinotruk Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-58",
+
+        code: "SIN-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "sinotruk-59",
+        category: "sinotruk",
+        name: "Sinotruk Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-59",
+
+        code: "SIN-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "sinotruk-60",
+        category: "sinotruk",
+        name: "Sinotruk Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=sinotruk-60",
+
+        code: "SIN-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "dongfeng-1",
+        category: "dongfeng",
+        name: "Dongfeng Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-1",
+
+        code: "DON-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "dongfeng-2",
+        category: "dongfeng",
+        name: "Dongfeng Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-2",
+
+        code: "DON-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "dongfeng-3",
+        category: "dongfeng",
+        name: "Dongfeng Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-3",
+
+        code: "DON-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "dongfeng-4",
+        category: "dongfeng",
+        name: "Dongfeng Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-4",
+
+        code: "DON-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "dongfeng-5",
+        category: "dongfeng",
+        name: "Dongfeng Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-5",
+
+        code: "DON-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "dongfeng-6",
+        category: "dongfeng",
+        name: "Dongfeng Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-6",
+
+        code: "DON-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "dongfeng-7",
+        category: "dongfeng",
+        name: "Dongfeng Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-7",
+
+        code: "DON-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "dongfeng-8",
+        category: "dongfeng",
+        name: "Dongfeng Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-8",
+
+        code: "DON-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "dongfeng-9",
+        category: "dongfeng",
+        name: "Dongfeng Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-9",
+
+        code: "DON-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "dongfeng-10",
+        category: "dongfeng",
+        name: "Dongfeng Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-10",
+
+        code: "DON-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "dongfeng-11",
+        category: "dongfeng",
+        name: "Dongfeng Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-11",
+
+        code: "DON-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "dongfeng-12",
+        category: "dongfeng",
+        name: "Dongfeng Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-12",
+
+        code: "DON-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "dongfeng-13",
+        category: "dongfeng",
+        name: "Dongfeng Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-13",
+
+        code: "DON-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "dongfeng-14",
+        category: "dongfeng",
+        name: "Dongfeng Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-14",
+
+        code: "DON-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "dongfeng-15",
+        category: "dongfeng",
+        name: "Dongfeng Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-15",
+
+        code: "DON-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "dongfeng-16",
+        category: "dongfeng",
+        name: "Dongfeng Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-16",
+
+        code: "DON-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "dongfeng-17",
+        category: "dongfeng",
+        name: "Dongfeng Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-17",
+
+        code: "DON-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "dongfeng-18",
+        category: "dongfeng",
+        name: "Dongfeng Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-18",
+
+        code: "DON-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "dongfeng-19",
+        category: "dongfeng",
+        name: "Dongfeng Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-19",
+
+        code: "DON-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "dongfeng-20",
+        category: "dongfeng",
+        name: "Dongfeng Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-20",
+
+        code: "DON-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "dongfeng-21",
+        category: "dongfeng",
+        name: "Dongfeng Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-21",
+
+        code: "DON-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "dongfeng-22",
+        category: "dongfeng",
+        name: "Dongfeng Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-22",
+
+        code: "DON-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "dongfeng-23",
+        category: "dongfeng",
+        name: "Dongfeng Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-23",
+
+        code: "DON-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "dongfeng-24",
+        category: "dongfeng",
+        name: "Dongfeng Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-24",
+
+        code: "DON-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "dongfeng-25",
+        category: "dongfeng",
+        name: "Dongfeng King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-25",
+
+        code: "DON-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "dongfeng-26",
+        category: "dongfeng",
+        name: "Dongfeng Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-26",
+
+        code: "DON-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "dongfeng-27",
+        category: "dongfeng",
+        name: "Dongfeng Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-27",
+
+        code: "DON-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "dongfeng-28",
+        category: "dongfeng",
+        name: "Dongfeng Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-28",
+
+        code: "DON-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "dongfeng-29",
+        category: "dongfeng",
+        name: "Dongfeng Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-29",
+
+        code: "DON-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "dongfeng-30",
+        category: "dongfeng",
+        name: "Dongfeng Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-30",
+
+        code: "DON-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "dongfeng-31",
+        category: "dongfeng",
+        name: "Dongfeng Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-31",
+
+        code: "DON-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "dongfeng-32",
+        category: "dongfeng",
+        name: "Dongfeng Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-32",
+
+        code: "DON-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "dongfeng-33",
+        category: "dongfeng",
+        name: "Dongfeng Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-33",
+
+        code: "DON-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "dongfeng-34",
+        category: "dongfeng",
+        name: "Dongfeng Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-34",
+
+        code: "DON-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "dongfeng-35",
+        category: "dongfeng",
+        name: "Dongfeng Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-35",
+
+        code: "DON-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "dongfeng-36",
+        category: "dongfeng",
+        name: "Dongfeng Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-36",
+
+        code: "DON-036",
+        price: 114000,
+        available: false
+    },
+    {
+        id: "dongfeng-37",
+        category: "dongfeng",
+        name: "Dongfeng Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-37",
+
+        code: "DON-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "dongfeng-38",
+        category: "dongfeng",
+        name: "Dongfeng Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-38",
+
+        code: "DON-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "dongfeng-39",
+        category: "dongfeng",
+        name: "Dongfeng Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-39",
+
+        code: "DON-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "dongfeng-40",
+        category: "dongfeng",
+        name: "Dongfeng Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-40",
+
+        code: "DON-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "dongfeng-41",
+        category: "dongfeng",
+        name: "Dongfeng Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-41",
+
+        code: "DON-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "dongfeng-42",
+        category: "dongfeng",
+        name: "Dongfeng Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-42",
+
+        code: "DON-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "dongfeng-43",
+        category: "dongfeng",
+        name: "Dongfeng Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-43",
+
+        code: "DON-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "dongfeng-44",
+        category: "dongfeng",
+        name: "Dongfeng Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-44",
+
+        code: "DON-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "dongfeng-45",
+        category: "dongfeng",
+        name: "Dongfeng Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-45",
+
+        code: "DON-045",
+        price: 138750,
+        available: false
+    },
+    {
+        id: "dongfeng-46",
+        category: "dongfeng",
+        name: "Dongfeng Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-46",
+
+        code: "DON-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "dongfeng-47",
+        category: "dongfeng",
+        name: "Dongfeng Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-47",
+
+        code: "DON-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "dongfeng-48",
+        category: "dongfeng",
+        name: "Dongfeng Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-48",
+
+        code: "DON-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "dongfeng-49",
+        category: "dongfeng",
+        name: "Dongfeng Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-49",
+
+        code: "DON-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "dongfeng-50",
+        category: "dongfeng",
+        name: "Dongfeng Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-50",
+
+        code: "DON-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "dongfeng-51",
+        category: "dongfeng",
+        name: "Dongfeng Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-51",
+
+        code: "DON-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "dongfeng-52",
+        category: "dongfeng",
+        name: "Dongfeng Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-52",
+
+        code: "DON-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "dongfeng-53",
+        category: "dongfeng",
+        name: "Dongfeng Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-53",
+
+        code: "DON-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "dongfeng-54",
+        category: "dongfeng",
+        name: "Dongfeng ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-54",
+
+        code: "DON-054",
+        price: 28500,
+        available: false
+    },
+    {
+        id: "dongfeng-55",
+        category: "dongfeng",
+        name: "Dongfeng Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-55",
+
+        code: "DON-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "dongfeng-56",
+        category: "dongfeng",
+        name: "Dongfeng Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-56",
+
+        code: "DON-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "dongfeng-57",
+        category: "dongfeng",
+        name: "Dongfeng Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-57",
+
+        code: "DON-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "dongfeng-58",
+        category: "dongfeng",
+        name: "Dongfeng Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-58",
+
+        code: "DON-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "dongfeng-59",
+        category: "dongfeng",
+        name: "Dongfeng Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-59",
+
+        code: "DON-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "dongfeng-60",
+        category: "dongfeng",
+        name: "Dongfeng Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=dongfeng-60",
+
+        code: "DON-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "fuso-1",
+        category: "fuso",
+        name: "Fuso Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-1",
+
+        code: "FUS-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "fuso-2",
+        category: "fuso",
+        name: "Fuso Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-2",
+
+        code: "FUS-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "fuso-3",
+        category: "fuso",
+        name: "Fuso Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-3",
+
+        code: "FUS-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "fuso-4",
+        category: "fuso",
+        name: "Fuso Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-4",
+
+        code: "FUS-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "fuso-5",
+        category: "fuso",
+        name: "Fuso Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-5",
+
+        code: "FUS-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "fuso-6",
+        category: "fuso",
+        name: "Fuso Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-6",
+
+        code: "FUS-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "fuso-7",
+        category: "fuso",
+        name: "Fuso Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-7",
+
+        code: "FUS-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "fuso-8",
+        category: "fuso",
+        name: "Fuso Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-8",
+
+        code: "FUS-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "fuso-9",
+        category: "fuso",
+        name: "Fuso Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-9",
+
+        code: "FUS-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "fuso-10",
+        category: "fuso",
+        name: "Fuso Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-10",
+
+        code: "FUS-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "fuso-11",
+        category: "fuso",
+        name: "Fuso Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-11",
+
+        code: "FUS-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "fuso-12",
+        category: "fuso",
+        name: "Fuso Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-12",
+
+        code: "FUS-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "fuso-13",
+        category: "fuso",
+        name: "Fuso Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-13",
+
+        code: "FUS-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "fuso-14",
+        category: "fuso",
+        name: "Fuso Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-14",
+
+        code: "FUS-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "fuso-15",
+        category: "fuso",
+        name: "Fuso Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-15",
+
+        code: "FUS-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "fuso-16",
+        category: "fuso",
+        name: "Fuso Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-16",
+
+        code: "FUS-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "fuso-17",
+        category: "fuso",
+        name: "Fuso Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-17",
+
+        code: "FUS-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "fuso-18",
+        category: "fuso",
+        name: "Fuso Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-18",
+
+        code: "FUS-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "fuso-19",
+        category: "fuso",
+        name: "Fuso Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-19",
+
+        code: "FUS-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "fuso-20",
+        category: "fuso",
+        name: "Fuso Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-20",
+
+        code: "FUS-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "fuso-21",
+        category: "fuso",
+        name: "Fuso Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-21",
+
+        code: "FUS-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "fuso-22",
+        category: "fuso",
+        name: "Fuso Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-22",
+
+        code: "FUS-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "fuso-23",
+        category: "fuso",
+        name: "Fuso Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-23",
+
+        code: "FUS-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "fuso-24",
+        category: "fuso",
+        name: "Fuso Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-24",
+
+        code: "FUS-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "fuso-25",
+        category: "fuso",
+        name: "Fuso King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-25",
+
+        code: "FUS-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "fuso-26",
+        category: "fuso",
+        name: "Fuso Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-26",
+
+        code: "FUS-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "fuso-27",
+        category: "fuso",
+        name: "Fuso Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-27",
+
+        code: "FUS-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "fuso-28",
+        category: "fuso",
+        name: "Fuso Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-28",
+
+        code: "FUS-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "fuso-29",
+        category: "fuso",
+        name: "Fuso Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-29",
+
+        code: "FUS-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "fuso-30",
+        category: "fuso",
+        name: "Fuso Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-30",
+
+        code: "FUS-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "fuso-31",
+        category: "fuso",
+        name: "Fuso Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-31",
+
+        code: "FUS-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "fuso-32",
+        category: "fuso",
+        name: "Fuso Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-32",
+
+        code: "FUS-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "fuso-33",
+        category: "fuso",
+        name: "Fuso Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-33",
+
+        code: "FUS-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "fuso-34",
+        category: "fuso",
+        name: "Fuso Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-34",
+
+        code: "FUS-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "fuso-35",
+        category: "fuso",
+        name: "Fuso Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-35",
+
+        code: "FUS-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "fuso-36",
+        category: "fuso",
+        name: "Fuso Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-36",
+
+        code: "FUS-036",
+        price: 114000,
+        available: false
+    },
+    {
+        id: "fuso-37",
+        category: "fuso",
+        name: "Fuso Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-37",
+
+        code: "FUS-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "fuso-38",
+        category: "fuso",
+        name: "Fuso Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-38",
+
+        code: "FUS-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "fuso-39",
+        category: "fuso",
+        name: "Fuso Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-39",
+
+        code: "FUS-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "fuso-40",
+        category: "fuso",
+        name: "Fuso Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-40",
+
+        code: "FUS-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "fuso-41",
+        category: "fuso",
+        name: "Fuso Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-41",
+
+        code: "FUS-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "fuso-42",
+        category: "fuso",
+        name: "Fuso Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-42",
+
+        code: "FUS-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "fuso-43",
+        category: "fuso",
+        name: "Fuso Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-43",
+
+        code: "FUS-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "fuso-44",
+        category: "fuso",
+        name: "Fuso Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-44",
+
+        code: "FUS-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "fuso-45",
+        category: "fuso",
+        name: "Fuso Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-45",
+
+        code: "FUS-045",
+        price: 138750,
+        available: false
+    },
+    {
+        id: "fuso-46",
+        category: "fuso",
+        name: "Fuso Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-46",
+
+        code: "FUS-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "fuso-47",
+        category: "fuso",
+        name: "Fuso Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-47",
+
+        code: "FUS-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "fuso-48",
+        category: "fuso",
+        name: "Fuso Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-48",
+
+        code: "FUS-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "fuso-49",
+        category: "fuso",
+        name: "Fuso Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-49",
+
+        code: "FUS-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "fuso-50",
+        category: "fuso",
+        name: "Fuso Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-50",
+
+        code: "FUS-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "fuso-51",
+        category: "fuso",
+        name: "Fuso Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-51",
+
+        code: "FUS-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "fuso-52",
+        category: "fuso",
+        name: "Fuso Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-52",
+
+        code: "FUS-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "fuso-53",
+        category: "fuso",
+        name: "Fuso Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-53",
+
+        code: "FUS-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "fuso-54",
+        category: "fuso",
+        name: "Fuso ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-54",
+
+        code: "FUS-054",
+        price: 28500,
+        available: false
+    },
+    {
+        id: "fuso-55",
+        category: "fuso",
+        name: "Fuso Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-55",
+
+        code: "FUS-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "fuso-56",
+        category: "fuso",
+        name: "Fuso Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-56",
+
+        code: "FUS-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "fuso-57",
+        category: "fuso",
+        name: "Fuso Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-57",
+
+        code: "FUS-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "fuso-58",
+        category: "fuso",
+        name: "Fuso Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-58",
+
+        code: "FUS-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "fuso-59",
+        category: "fuso",
+        name: "Fuso Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-59",
+
+        code: "FUS-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "fuso-60",
+        category: "fuso",
+        name: "Fuso Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=fuso-60",
+
+        code: "FUS-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "daihatsu-1",
+        category: "daihatsu",
+        name: "Daihatsu Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-1",
+
+        code: "DAI-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "daihatsu-2",
+        category: "daihatsu",
+        name: "Daihatsu Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-2",
+
+        code: "DAI-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "daihatsu-3",
+        category: "daihatsu",
+        name: "Daihatsu Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-3",
+
+        code: "DAI-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "daihatsu-4",
+        category: "daihatsu",
+        name: "Daihatsu Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-4",
+
+        code: "DAI-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "daihatsu-5",
+        category: "daihatsu",
+        name: "Daihatsu Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-5",
+
+        code: "DAI-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "daihatsu-6",
+        category: "daihatsu",
+        name: "Daihatsu Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-6",
+
+        code: "DAI-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "daihatsu-7",
+        category: "daihatsu",
+        name: "Daihatsu Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-7",
+
+        code: "DAI-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "daihatsu-8",
+        category: "daihatsu",
+        name: "Daihatsu Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-8",
+
+        code: "DAI-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "daihatsu-9",
+        category: "daihatsu",
+        name: "Daihatsu Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-9",
+
+        code: "DAI-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "daihatsu-10",
+        category: "daihatsu",
+        name: "Daihatsu Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-10",
+
+        code: "DAI-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "daihatsu-11",
+        category: "daihatsu",
+        name: "Daihatsu Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-11",
+
+        code: "DAI-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "daihatsu-12",
+        category: "daihatsu",
+        name: "Daihatsu Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-12",
+
+        code: "DAI-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "daihatsu-13",
+        category: "daihatsu",
+        name: "Daihatsu Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-13",
+
+        code: "DAI-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "daihatsu-14",
+        category: "daihatsu",
+        name: "Daihatsu Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-14",
+
+        code: "DAI-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "daihatsu-15",
+        category: "daihatsu",
+        name: "Daihatsu Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-15",
+
+        code: "DAI-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "daihatsu-16",
+        category: "daihatsu",
+        name: "Daihatsu Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-16",
+
+        code: "DAI-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "daihatsu-17",
+        category: "daihatsu",
+        name: "Daihatsu Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-17",
+
+        code: "DAI-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "daihatsu-18",
+        category: "daihatsu",
+        name: "Daihatsu Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-18",
+
+        code: "DAI-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "daihatsu-19",
+        category: "daihatsu",
+        name: "Daihatsu Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-19",
+
+        code: "DAI-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "daihatsu-20",
+        category: "daihatsu",
+        name: "Daihatsu Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-20",
+
+        code: "DAI-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "daihatsu-21",
+        category: "daihatsu",
+        name: "Daihatsu Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-21",
+
+        code: "DAI-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "daihatsu-22",
+        category: "daihatsu",
+        name: "Daihatsu Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-22",
+
+        code: "DAI-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "daihatsu-23",
+        category: "daihatsu",
+        name: "Daihatsu Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-23",
+
+        code: "DAI-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "daihatsu-24",
+        category: "daihatsu",
+        name: "Daihatsu Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-24",
+
+        code: "DAI-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "daihatsu-25",
+        category: "daihatsu",
+        name: "Daihatsu King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-25",
+
+        code: "DAI-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "daihatsu-26",
+        category: "daihatsu",
+        name: "Daihatsu Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-26",
+
+        code: "DAI-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "daihatsu-27",
+        category: "daihatsu",
+        name: "Daihatsu Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-27",
+
+        code: "DAI-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "daihatsu-28",
+        category: "daihatsu",
+        name: "Daihatsu Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-28",
+
+        code: "DAI-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "daihatsu-29",
+        category: "daihatsu",
+        name: "Daihatsu Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-29",
+
+        code: "DAI-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "daihatsu-30",
+        category: "daihatsu",
+        name: "Daihatsu Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-30",
+
+        code: "DAI-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "daihatsu-31",
+        category: "daihatsu",
+        name: "Daihatsu Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-31",
+
+        code: "DAI-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "daihatsu-32",
+        category: "daihatsu",
+        name: "Daihatsu Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-32",
+
+        code: "DAI-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "daihatsu-33",
+        category: "daihatsu",
+        name: "Daihatsu Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-33",
+
+        code: "DAI-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "daihatsu-34",
+        category: "daihatsu",
+        name: "Daihatsu Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-34",
+
+        code: "DAI-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "daihatsu-35",
+        category: "daihatsu",
+        name: "Daihatsu Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-35",
+
+        code: "DAI-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "daihatsu-36",
+        category: "daihatsu",
+        name: "Daihatsu Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-36",
+
+        code: "DAI-036",
+        price: 114000,
+        available: false
+    },
+    {
+        id: "daihatsu-37",
+        category: "daihatsu",
+        name: "Daihatsu Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-37",
+
+        code: "DAI-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "daihatsu-38",
+        category: "daihatsu",
+        name: "Daihatsu Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-38",
+
+        code: "DAI-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "daihatsu-39",
+        category: "daihatsu",
+        name: "Daihatsu Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-39",
+
+        code: "DAI-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "daihatsu-40",
+        category: "daihatsu",
+        name: "Daihatsu Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-40",
+
+        code: "DAI-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "daihatsu-41",
+        category: "daihatsu",
+        name: "Daihatsu Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-41",
+
+        code: "DAI-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "daihatsu-42",
+        category: "daihatsu",
+        name: "Daihatsu Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-42",
+
+        code: "DAI-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "daihatsu-43",
+        category: "daihatsu",
+        name: "Daihatsu Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-43",
+
+        code: "DAI-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "daihatsu-44",
+        category: "daihatsu",
+        name: "Daihatsu Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-44",
+
+        code: "DAI-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "daihatsu-45",
+        category: "daihatsu",
+        name: "Daihatsu Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-45",
+
+        code: "DAI-045",
+        price: 138750,
+        available: false
+    },
+    {
+        id: "daihatsu-46",
+        category: "daihatsu",
+        name: "Daihatsu Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-46",
+
+        code: "DAI-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "daihatsu-47",
+        category: "daihatsu",
+        name: "Daihatsu Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-47",
+
+        code: "DAI-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "daihatsu-48",
+        category: "daihatsu",
+        name: "Daihatsu Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-48",
+
+        code: "DAI-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "daihatsu-49",
+        category: "daihatsu",
+        name: "Daihatsu Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-49",
+
+        code: "DAI-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "daihatsu-50",
+        category: "daihatsu",
+        name: "Daihatsu Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-50",
+
+        code: "DAI-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "daihatsu-51",
+        category: "daihatsu",
+        name: "Daihatsu Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-51",
+
+        code: "DAI-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "daihatsu-52",
+        category: "daihatsu",
+        name: "Daihatsu Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-52",
+
+        code: "DAI-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "daihatsu-53",
+        category: "daihatsu",
+        name: "Daihatsu Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-53",
+
+        code: "DAI-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "daihatsu-54",
+        category: "daihatsu",
+        name: "Daihatsu ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-54",
+
+        code: "DAI-054",
+        price: 28500,
+        available: false
+    },
+    {
+        id: "daihatsu-55",
+        category: "daihatsu",
+        name: "Daihatsu Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-55",
+
+        code: "DAI-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "daihatsu-56",
+        category: "daihatsu",
+        name: "Daihatsu Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-56",
+
+        code: "DAI-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "daihatsu-57",
+        category: "daihatsu",
+        name: "Daihatsu Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-57",
+
+        code: "DAI-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "daihatsu-58",
+        category: "daihatsu",
+        name: "Daihatsu Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-58",
+
+        code: "DAI-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "daihatsu-59",
+        category: "daihatsu",
+        name: "Daihatsu Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-59",
+
+        code: "DAI-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "daihatsu-60",
+        category: "daihatsu",
+        name: "Daihatsu Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=daihatsu-60",
+
+        code: "DAI-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "canta-1",
+        category: "canta",
+        name: "Canta Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-1",
+
+        code: "CAN-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "canta-2",
+        category: "canta",
+        name: "Canta Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-2",
+
+        code: "CAN-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "canta-3",
+        category: "canta",
+        name: "Canta Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-3",
+
+        code: "CAN-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "canta-4",
+        category: "canta",
+        name: "Canta Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-4",
+
+        code: "CAN-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "canta-5",
+        category: "canta",
+        name: "Canta Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-5",
+
+        code: "CAN-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "canta-6",
+        category: "canta",
+        name: "Canta Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-6",
+
+        code: "CAN-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "canta-7",
+        category: "canta",
+        name: "Canta Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-7",
+
+        code: "CAN-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "canta-8",
+        category: "canta",
+        name: "Canta Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-8",
+
+        code: "CAN-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "canta-9",
+        category: "canta",
+        name: "Canta Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-9",
+
+        code: "CAN-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "canta-10",
+        category: "canta",
+        name: "Canta Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-10",
+
+        code: "CAN-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "canta-11",
+        category: "canta",
+        name: "Canta Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-11",
+
+        code: "CAN-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "canta-12",
+        category: "canta",
+        name: "Canta Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-12",
+
+        code: "CAN-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "canta-13",
+        category: "canta",
+        name: "Canta Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-13",
+
+        code: "CAN-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "canta-14",
+        category: "canta",
+        name: "Canta Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-14",
+
+        code: "CAN-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "canta-15",
+        category: "canta",
+        name: "Canta Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-15",
+
+        code: "CAN-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "canta-16",
+        category: "canta",
+        name: "Canta Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-16",
+
+        code: "CAN-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "canta-17",
+        category: "canta",
+        name: "Canta Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-17",
+
+        code: "CAN-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "canta-18",
+        category: "canta",
+        name: "Canta Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-18",
+
+        code: "CAN-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "canta-19",
+        category: "canta",
+        name: "Canta Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-19",
+
+        code: "CAN-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "canta-20",
+        category: "canta",
+        name: "Canta Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-20",
+
+        code: "CAN-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "engineoil-1",
+        category: "engineoil",
+        name: "Engine Oils 15W-40 Diesel Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-1",
+
+        code: "ENG-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "engineoil-2",
+        category: "engineoil",
+        name: "Engine Oils 10W-40 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-2",
+
+        code: "ENG-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "engineoil-3",
+        category: "engineoil",
+        name: "Engine Oils 20W-50 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-3",
+
+        code: "ENG-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "engineoil-4",
+        category: "engineoil",
+        name: "Engine Oils 5W-30 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-4",
+
+        code: "ENG-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "engineoil-5",
+        category: "engineoil",
+        name: "Engine Oils 5W-40 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-5",
+
+        code: "ENG-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "engineoil-6",
+        category: "engineoil",
+        name: "Engine Oils ATF Transmission Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-6",
+
+        code: "ENG-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "engineoil-7",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 80W-90",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-7",
+
+        code: "ENG-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "engineoil-8",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 85W-140",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-8",
+
+        code: "ENG-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "engineoil-9",
+        category: "engineoil",
+        name: "Engine Oils Hydraulic Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-9",
+
+        code: "ENG-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "engineoil-10",
+        category: "engineoil",
+        name: "Engine Oils Brake Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-10",
+
+        code: "ENG-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "engineoil-11",
+        category: "engineoil",
+        name: "Engine Oils Coolant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-11",
+
+        code: "ENG-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "engineoil-12",
+        category: "engineoil",
+        name: "Engine Oils Power Steering Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-12",
+
+        code: "ENG-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "engineoil-13",
+        category: "engineoil",
+        name: "Engine Oils Transmission Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-13",
+
+        code: "ENG-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "engineoil-14",
+        category: "engineoil",
+        name: "Engine Oils Synthetic Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-14",
+
+        code: "ENG-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "engineoil-15",
+        category: "engineoil",
+        name: "Engine Oils Heavy Duty Diesel Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-15",
+
+        code: "ENG-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "engineoil-16",
+        category: "engineoil",
+        name: "Engine Oils Truck Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-16",
+
+        code: "ENG-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "engineoil-17",
+        category: "engineoil",
+        name: "Engine Oils Premium Motor Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-17",
+
+        code: "ENG-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "engineoil-18",
+        category: "engineoil",
+        name: "Engine Oils Diesel Lubricant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-18",
+
+        code: "ENG-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "engineoil-19",
+        category: "engineoil",
+        name: "Engine Oils Universal Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-19",
+
+        code: "ENG-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "engineoil-20",
+        category: "engineoil",
+        name: "Engine Oils Long Life Coolant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-20",
+
+        code: "ENG-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "other-1",
+        category: "other",
+        name: "Other Pieces Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-1",
+
+        code: "OTH-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "other-2",
+        category: "other",
+        name: "Other Pieces Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-2",
+
+        code: "OTH-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "other-3",
+        category: "other",
+        name: "Other Pieces Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-3",
+
+        code: "OTH-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "other-4",
+        category: "other",
+        name: "Other Pieces Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-4",
+
+        code: "OTH-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "other-5",
+        category: "other",
+        name: "Other Pieces Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-5",
+
+        code: "OTH-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "other-6",
+        category: "other",
+        name: "Other Pieces Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-6",
+
+        code: "OTH-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "other-7",
+        category: "other",
+        name: "Other Pieces Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-7",
+
+        code: "OTH-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "other-8",
+        category: "other",
+        name: "Other Pieces Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-8",
+
+        code: "OTH-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "other-9",
+        category: "other",
+        name: "Other Pieces Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-9",
+
+        code: "OTH-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "other-10",
+        category: "other",
+        name: "Other Pieces Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-10",
+
+        code: "OTH-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "other-11",
+        category: "other",
+        name: "Other Pieces Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-11",
+
+        code: "OTH-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "other-12",
+        category: "other",
+        name: "Other Pieces Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-12",
+
+        code: "OTH-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "other-13",
+        category: "other",
+        name: "Other Pieces Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-13",
+
+        code: "OTH-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "other-14",
+        category: "other",
+        name: "Other Pieces Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-14",
+
+        code: "OTH-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "other-15",
+        category: "other",
+        name: "Other Pieces Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-15",
+
+        code: "OTH-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "other-16",
+        category: "other",
+        name: "Other Pieces Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-16",
+
+        code: "OTH-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "other-17",
+        category: "other",
+        name: "Other Pieces Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-17",
+
+        code: "OTH-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "other-18",
+        category: "other",
+        name: "Other Pieces Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-18",
+
+        code: "OTH-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "other-19",
+        category: "other",
+        name: "Other Pieces Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-19",
+
+        code: "OTH-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "other-20",
+        category: "other",
+        name: "Other Pieces Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-20",
+
+        code: "OTH-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "other-21",
+        category: "other",
+        name: "Other Pieces Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-21",
+
+        code: "OTH-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "other-22",
+        category: "other",
+        name: "Other Pieces Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-22",
+
+        code: "OTH-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "other-23",
+        category: "other",
+        name: "Other Pieces Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-23",
+
+        code: "OTH-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "other-24",
+        category: "other",
+        name: "Other Pieces Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-24",
+
+        code: "OTH-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "other-25",
+        category: "other",
+        name: "Other Pieces King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-25",
+
+        code: "OTH-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "other-26",
+        category: "other",
+        name: "Other Pieces Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-26",
+
+        code: "OTH-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "other-27",
+        category: "other",
+        name: "Other Pieces Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-27",
+
+        code: "OTH-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "other-28",
+        category: "other",
+        name: "Other Pieces Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-28",
+
+        code: "OTH-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "other-29",
+        category: "other",
+        name: "Other Pieces Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-29",
+
+        code: "OTH-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "other-30",
+        category: "other",
+        name: "Other Pieces Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-30",
+
+        code: "OTH-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "isuzu-1",
+        category: "isuzu",
+        name: "Isuzu Oil Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-1",
+
+        code: "ISU-001",
+        price: 17750,
+        available: true
+    },
+    {
+        id: "isuzu-2",
+        category: "isuzu",
+        name: "Isuzu Air Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-2",
+
+        code: "ISU-002",
+        price: 20500,
+        available: true
+    },
+    {
+        id: "isuzu-3",
+        category: "isuzu",
+        name: "Isuzu Fuel Filter",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-3",
+
+        code: "ISU-003",
+        price: 23250,
+        available: true
+    },
+    {
+        id: "isuzu-4",
+        category: "isuzu",
+        name: "Isuzu Brake Pad",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-4",
+
+        code: "ISU-004",
+        price: 26000,
+        available: true
+    },
+    {
+        id: "isuzu-5",
+        category: "isuzu",
+        name: "Isuzu Brake Disc",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-5",
+
+        code: "ISU-005",
+        price: 28750,
+        available: true
+    },
+    {
+        id: "isuzu-6",
+        category: "isuzu",
+        name: "Isuzu Clutch Plate",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-6",
+
+        code: "ISU-006",
+        price: 31500,
+        available: true
+    },
+    {
+        id: "isuzu-7",
+        category: "isuzu",
+        name: "Isuzu Clutch Cover",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-7",
+
+        code: "ISU-007",
+        price: 34250,
+        available: true
+    },
+    {
+        id: "isuzu-8",
+        category: "isuzu",
+        name: "Isuzu Clutch Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-8",
+
+        code: "ISU-008",
+        price: 37000,
+        available: true
+    },
+    {
+        id: "isuzu-9",
+        category: "isuzu",
+        name: "Isuzu Water Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-9",
+
+        code: "ISU-009",
+        price: 39750,
+        available: false
+    },
+    {
+        id: "isuzu-10",
+        category: "isuzu",
+        name: "Isuzu Radiator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-10",
+
+        code: "ISU-010",
+        price: 42500,
+        available: true
+    },
+    {
+        id: "isuzu-11",
+        category: "isuzu",
+        name: "Isuzu Alternator",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-11",
+
+        code: "ISU-011",
+        price: 45250,
+        available: true
+    },
+    {
+        id: "isuzu-12",
+        category: "isuzu",
+        name: "Isuzu Starter Motor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-12",
+
+        code: "ISU-012",
+        price: 48000,
+        available: true
+    },
+    {
+        id: "isuzu-13",
+        category: "isuzu",
+        name: "Isuzu Shock Absorber",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-13",
+
+        code: "ISU-013",
+        price: 50750,
+        available: true
+    },
+    {
+        id: "isuzu-14",
+        category: "isuzu",
+        name: "Isuzu Wheel Bearing",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-14",
+
+        code: "ISU-014",
+        price: 53500,
+        available: true
+    },
+    {
+        id: "isuzu-15",
+        category: "isuzu",
+        name: "Isuzu Head Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-15",
+
+        code: "ISU-015",
+        price: 56250,
+        available: true
+    },
+    {
+        id: "isuzu-16",
+        category: "isuzu",
+        name: "Isuzu Tail Lamp",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-16",
+
+        code: "ISU-016",
+        price: 59000,
+        available: true
+    },
+    {
+        id: "isuzu-17",
+        category: "isuzu",
+        name: "Isuzu Fan Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-17",
+
+        code: "ISU-017",
+        price: 61750,
+        available: true
+    },
+    {
+        id: "isuzu-18",
+        category: "isuzu",
+        name: "Isuzu Timing Belt",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-18",
+
+        code: "ISU-018",
+        price: 64500,
+        available: false
+    },
+    {
+        id: "isuzu-19",
+        category: "isuzu",
+        name: "Isuzu Brake Shoe",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-19",
+
+        code: "ISU-019",
+        price: 67250,
+        available: true
+    },
+    {
+        id: "isuzu-20",
+        category: "isuzu",
+        name: "Isuzu Brake Drum",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-20",
+
+        code: "ISU-020",
+        price: 70000,
+        available: true
+    },
+    {
+        id: "isuzu-21",
+        category: "isuzu",
+        name: "Isuzu Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-21",
+
+        code: "ISU-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "isuzu-22",
+        category: "isuzu",
+        name: "Isuzu Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-22",
+
+        code: "ISU-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "isuzu-23",
+        category: "isuzu",
+        name: "Isuzu Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-23",
+
+        code: "ISU-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "isuzu-24",
+        category: "isuzu",
+        name: "Isuzu Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-24",
+
+        code: "ISU-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "isuzu-25",
+        category: "isuzu",
+        name: "Isuzu King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-25",
+
+        code: "ISU-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "isuzu-26",
+        category: "isuzu",
+        name: "Isuzu Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-26",
+
+        code: "ISU-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "isuzu-27",
+        category: "isuzu",
+        name: "Isuzu Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-27",
+
+        code: "ISU-027",
+        price: 89250,
+        available: false
+    },
+    {
+        id: "isuzu-28",
+        category: "isuzu",
+        name: "Isuzu Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-28",
+
+        code: "ISU-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "isuzu-29",
+        category: "isuzu",
+        name: "Isuzu Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-29",
+
+        code: "ISU-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "isuzu-30",
+        category: "isuzu",
+        name: "Isuzu Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-30",
+
+        code: "ISU-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "isuzu-31",
+        category: "isuzu",
+        name: "Isuzu Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-31",
+
+        code: "ISU-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "isuzu-32",
+        category: "isuzu",
+        name: "Isuzu Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-32",
+
+        code: "ISU-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "isuzu-33",
+        category: "isuzu",
+        name: "Isuzu Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-33",
+
+        code: "ISU-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "isuzu-34",
+        category: "isuzu",
+        name: "Isuzu Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-34",
+
+        code: "ISU-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "isuzu-35",
+        category: "isuzu",
+        name: "Isuzu Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-35",
+
+        code: "ISU-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "isuzu-36",
+        category: "isuzu",
+        name: "Isuzu Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-36",
+
+        code: "ISU-036",
+        price: 114000,
+        available: false
+    },
+    {
+        id: "isuzu-37",
+        category: "isuzu",
+        name: "Isuzu Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-37",
+
+        code: "ISU-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "isuzu-38",
+        category: "isuzu",
+        name: "Isuzu Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-38",
+
+        code: "ISU-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "isuzu-39",
+        category: "isuzu",
+        name: "Isuzu Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-39",
+
+        code: "ISU-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "isuzu-40",
+        category: "isuzu",
+        name: "Isuzu Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-40",
+
+        code: "ISU-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "isuzu-41",
+        category: "isuzu",
+        name: "Isuzu Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-41",
+
+        code: "ISU-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "isuzu-42",
+        category: "isuzu",
+        name: "Isuzu Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-42",
+
+        code: "ISU-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "isuzu-43",
+        category: "isuzu",
+        name: "Isuzu Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-43",
+
+        code: "ISU-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "isuzu-44",
+        category: "isuzu",
+        name: "Isuzu Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-44",
+
+        code: "ISU-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "isuzu-45",
+        category: "isuzu",
+        name: "Isuzu Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-45",
+
+        code: "ISU-045",
+        price: 138750,
+        available: false
+    },
+    {
+        id: "isuzu-46",
+        category: "isuzu",
+        name: "Isuzu Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-46",
+
+        code: "ISU-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "isuzu-47",
+        category: "isuzu",
+        name: "Isuzu Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-47",
+
+        code: "ISU-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "isuzu-48",
+        category: "isuzu",
+        name: "Isuzu Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-48",
+
+        code: "ISU-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "isuzu-49",
+        category: "isuzu",
+        name: "Isuzu Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-49",
+
+        code: "ISU-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "isuzu-50",
+        category: "isuzu",
+        name: "Isuzu Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-50",
+
+        code: "ISU-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "isuzu-51",
+        category: "isuzu",
+        name: "Isuzu Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-51",
+
+        code: "ISU-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "isuzu-52",
+        category: "isuzu",
+        name: "Isuzu Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-52",
+
+        code: "ISU-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "isuzu-53",
+        category: "isuzu",
+        name: "Isuzu Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-53",
+
+        code: "ISU-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "isuzu-54",
+        category: "isuzu",
+        name: "Isuzu ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-54",
+
+        code: "ISU-054",
+        price: 28500,
+        available: false
+    },
+    {
+        id: "isuzu-55",
+        category: "isuzu",
+        name: "Isuzu Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-55",
+
+        code: "ISU-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "isuzu-56",
+        category: "isuzu",
+        name: "Isuzu Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-56",
+
+        code: "ISU-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "isuzu-57",
+        category: "isuzu",
+        name: "Isuzu Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-57",
+
+        code: "ISU-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "isuzu-58",
+        category: "isuzu",
+        name: "Isuzu Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-58",
+
+        code: "ISU-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "isuzu-59",
+        category: "isuzu",
+        name: "Isuzu Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-59",
+
+        code: "ISU-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "isuzu-60",
+        category: "isuzu",
+        name: "Isuzu Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,spare,parts?lock=isuzu-60",
+
+        code: "ISU-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "canta-21",
+        category: "canta",
+        name: "Canta Steering Rod",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-21",
+
+        code: "CAN-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "canta-22",
+        category: "canta",
+        name: "Canta Tie Rod End",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-22",
+
+        code: "CAN-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "canta-23",
+        category: "canta",
+        name: "Canta Ball Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-23",
+
+        code: "CAN-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "canta-24",
+        category: "canta",
+        name: "Canta Universal Joint",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-24",
+
+        code: "CAN-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "canta-25",
+        category: "canta",
+        name: "Canta King Pin",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-25",
+
+        code: "CAN-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "canta-26",
+        category: "canta",
+        name: "Canta Leaf Spring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-26",
+
+        code: "CAN-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "canta-27",
+        category: "canta",
+        name: "Canta Turbocharger",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-27",
+
+        code: "CAN-027",
+        price: 89250,
+        available: true
+    },
+    {
+        id: "canta-28",
+        category: "canta",
+        name: "Canta Injector",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-28",
+
+        code: "CAN-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "canta-29",
+        category: "canta",
+        name: "Canta Fuel Pump",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-29",
+
+        code: "CAN-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "canta-30",
+        category: "canta",
+        name: "Canta Thermostat",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-30",
+
+        code: "CAN-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "canta-31",
+        category: "canta",
+        name: "Canta Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-31",
+
+        code: "CAN-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "canta-32",
+        category: "canta",
+        name: "Canta Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-32",
+
+        code: "CAN-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "canta-33",
+        category: "canta",
+        name: "Canta Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-33",
+
+        code: "CAN-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "canta-34",
+        category: "canta",
+        name: "Canta Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-34",
+
+        code: "CAN-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "canta-35",
+        category: "canta",
+        name: "Canta Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-35",
+
+        code: "CAN-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "canta-36",
+        category: "canta",
+        name: "Canta Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-36",
+
+        code: "CAN-036",
+        price: 114000,
+        available: true
+    },
+    {
+        id: "canta-37",
+        category: "canta",
+        name: "Canta Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-37",
+
+        code: "CAN-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "canta-38",
+        category: "canta",
+        name: "Canta Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-38",
+
+        code: "CAN-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "canta-39",
+        category: "canta",
+        name: "Canta Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-39",
+
+        code: "CAN-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "canta-40",
+        category: "canta",
+        name: "Canta Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-40",
+
+        code: "CAN-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "canta-41",
+        category: "canta",
+        name: "Canta Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-41",
+
+        code: "CAN-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "canta-42",
+        category: "canta",
+        name: "Canta Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-42",
+
+        code: "CAN-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "canta-43",
+        category: "canta",
+        name: "Canta Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-43",
+
+        code: "CAN-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "canta-44",
+        category: "canta",
+        name: "Canta Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-44",
+
+        code: "CAN-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "canta-45",
+        category: "canta",
+        name: "Canta Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-45",
+
+        code: "CAN-045",
+        price: 138750,
+        available: true
+    },
+    {
+        id: "canta-46",
+        category: "canta",
+        name: "Canta Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-46",
+
+        code: "CAN-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "canta-47",
+        category: "canta",
+        name: "Canta Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-47",
+
+        code: "CAN-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "canta-48",
+        category: "canta",
+        name: "Canta Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-48",
+
+        code: "CAN-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "canta-49",
+        category: "canta",
+        name: "Canta Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-49",
+
+        code: "CAN-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "canta-50",
+        category: "canta",
+        name: "Canta Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-50",
+
+        code: "CAN-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "canta-51",
+        category: "canta",
+        name: "Canta Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-51",
+
+        code: "CAN-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "canta-52",
+        category: "canta",
+        name: "Canta Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-52",
+
+        code: "CAN-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "canta-53",
+        category: "canta",
+        name: "Canta Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-53",
+
+        code: "CAN-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "canta-54",
+        category: "canta",
+        name: "Canta ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-54",
+
+        code: "CAN-054",
+        price: 28500,
+        available: true
+    },
+    {
+        id: "canta-55",
+        category: "canta",
+        name: "Canta Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-55",
+
+        code: "CAN-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "canta-56",
+        category: "canta",
+        name: "Canta Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-56",
+
+        code: "CAN-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "canta-57",
+        category: "canta",
+        name: "Canta Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-57",
+
+        code: "CAN-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "canta-58",
+        category: "canta",
+        name: "Canta Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-58",
+
+        code: "CAN-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "canta-59",
+        category: "canta",
+        name: "Canta Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-59",
+
+        code: "CAN-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "canta-60",
+        category: "canta",
+        name: "Canta Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/truck,engine,automotive?lock=canta-60",
+
+        code: "CAN-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "engineoil-21",
+        category: "engineoil",
+        name: "Engine Oils 15W-40 Diesel Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-21",
+
+        code: "ENG-021",
+        price: 72750,
+        available: true
+    },
+    {
+        id: "engineoil-22",
+        category: "engineoil",
+        name: "Engine Oils 10W-40 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-22",
+
+        code: "ENG-022",
+        price: 75500,
+        available: true
+    },
+    {
+        id: "engineoil-23",
+        category: "engineoil",
+        name: "Engine Oils 20W-50 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-23",
+
+        code: "ENG-023",
+        price: 78250,
+        available: true
+    },
+    {
+        id: "engineoil-24",
+        category: "engineoil",
+        name: "Engine Oils 5W-30 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-24",
+
+        code: "ENG-024",
+        price: 81000,
+        available: true
+    },
+    {
+        id: "engineoil-25",
+        category: "engineoil",
+        name: "Engine Oils 5W-40 Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-25",
+
+        code: "ENG-025",
+        price: 83750,
+        available: true
+    },
+    {
+        id: "engineoil-26",
+        category: "engineoil",
+        name: "Engine Oils ATF Transmission Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-26",
+
+        code: "ENG-026",
+        price: 86500,
+        available: true
+    },
+    {
+        id: "engineoil-27",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 80W-90",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-27",
+
+        code: "ENG-027",
+        price: 89250,
+        available: true
+    },
+    {
+        id: "engineoil-28",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 85W-140",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-28",
+
+        code: "ENG-028",
+        price: 92000,
+        available: true
+    },
+    {
+        id: "engineoil-29",
+        category: "engineoil",
+        name: "Engine Oils Hydraulic Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-29",
+
+        code: "ENG-029",
+        price: 94750,
+        available: true
+    },
+    {
+        id: "engineoil-30",
+        category: "engineoil",
+        name: "Engine Oils Brake Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-30",
+
+        code: "ENG-030",
+        price: 97500,
+        available: true
+    },
+    {
+        id: "engineoil-31",
+        category: "engineoil",
+        name: "Engine Oils Coolant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-31",
+
+        code: "ENG-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "engineoil-32",
+        category: "engineoil",
+        name: "Engine Oils Power Steering Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-32",
+
+        code: "ENG-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "engineoil-33",
+        category: "engineoil",
+        name: "Engine Oils Transmission Fluid",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-33",
+
+        code: "ENG-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "engineoil-34",
+        category: "engineoil",
+        name: "Engine Oils Synthetic Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-34",
+
+        code: "ENG-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "engineoil-35",
+        category: "engineoil",
+        name: "Engine Oils Heavy Duty Diesel Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-35",
+
+        code: "ENG-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "engineoil-36",
+        category: "engineoil",
+        name: "Engine Oils Truck Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-36",
+
+        code: "ENG-036",
+        price: 114000,
+        available: true
+    },
+    {
+        id: "engineoil-37",
+        category: "engineoil",
+        name: "Engine Oils Premium Motor Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-37",
+
+        code: "ENG-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "engineoil-38",
+        category: "engineoil",
+        name: "Engine Oils Diesel Lubricant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-38",
+
+        code: "ENG-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "engineoil-39",
+        category: "engineoil",
+        name: "Engine Oils Universal Engine Oil",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-39",
+
+        code: "ENG-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "engineoil-40",
+        category: "engineoil",
+        name: "Engine Oils Long Life Coolant",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-40",
+
+        code: "ENG-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "engineoil-41",
+        category: "engineoil",
+        name: "Engine Oils 15W-40 Diesel Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-41",
+
+        code: "ENG-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "engineoil-42",
+        category: "engineoil",
+        name: "Engine Oils 10W-40 Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-42",
+
+        code: "ENG-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "engineoil-43",
+        category: "engineoil",
+        name: "Engine Oils 20W-50 Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-43",
+
+        code: "ENG-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "engineoil-44",
+        category: "engineoil",
+        name: "Engine Oils 5W-30 Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-44",
+
+        code: "ENG-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "engineoil-45",
+        category: "engineoil",
+        name: "Engine Oils 5W-40 Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-45",
+
+        code: "ENG-045",
+        price: 138750,
+        available: true
+    },
+    {
+        id: "engineoil-46",
+        category: "engineoil",
+        name: "Engine Oils ATF Transmission Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-46",
+
+        code: "ENG-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "engineoil-47",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 80W-90 (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-47",
+
+        code: "ENG-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "engineoil-48",
+        category: "engineoil",
+        name: "Engine Oils Gear Oil 85W-140 (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-48",
+
+        code: "ENG-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "engineoil-49",
+        category: "engineoil",
+        name: "Engine Oils Hydraulic Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-49",
+
+        code: "ENG-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "engineoil-50",
+        category: "engineoil",
+        name: "Engine Oils Brake Fluid (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-50",
+
+        code: "ENG-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "engineoil-51",
+        category: "engineoil",
+        name: "Engine Oils Coolant (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-51",
+
+        code: "ENG-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "engineoil-52",
+        category: "engineoil",
+        name: "Engine Oils Power Steering Fluid (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-52",
+
+        code: "ENG-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "engineoil-53",
+        category: "engineoil",
+        name: "Engine Oils Transmission Fluid (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-53",
+
+        code: "ENG-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "engineoil-54",
+        category: "engineoil",
+        name: "Engine Oils Synthetic Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-54",
+
+        code: "ENG-054",
+        price: 28500,
+        available: true
+    },
+    {
+        id: "engineoil-55",
+        category: "engineoil",
+        name: "Engine Oils Heavy Duty Diesel Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-55",
+
+        code: "ENG-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "engineoil-56",
+        category: "engineoil",
+        name: "Engine Oils Truck Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-56",
+
+        code: "ENG-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "engineoil-57",
+        category: "engineoil",
+        name: "Engine Oils Premium Motor Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-57",
+
+        code: "ENG-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "engineoil-58",
+        category: "engineoil",
+        name: "Engine Oils Diesel Lubricant (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-58",
+
+        code: "ENG-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "engineoil-59",
+        category: "engineoil",
+        name: "Engine Oils Universal Engine Oil (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-59",
+
+        code: "ENG-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "engineoil-60",
+        category: "engineoil",
+        name: "Engine Oils Long Life Coolant (Type 3)",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/engine,oil,automotive?lock=engineoil-60",
+
+        code: "ENG-060",
+        price: 45000,
+        available: true
+    },
+    {
+        id: "other-31",
+        category: "other",
+        name: "Other Pieces Gasket Set",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-31",
+
+        code: "OTH-031",
+        price: 100250,
+        available: true
+    },
+    {
+        id: "other-32",
+        category: "other",
+        name: "Other Pieces Cylinder Head",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-32",
+
+        code: "OTH-032",
+        price: 103000,
+        available: true
+    },
+    {
+        id: "other-33",
+        category: "other",
+        name: "Other Pieces Piston Ring",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-33",
+
+        code: "OTH-033",
+        price: 105750,
+        available: true
+    },
+    {
+        id: "other-34",
+        category: "other",
+        name: "Other Pieces Engine Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-34",
+
+        code: "OTH-034",
+        price: 108500,
+        available: true
+    },
+    {
+        id: "other-35",
+        category: "other",
+        name: "Other Pieces Gear Lever",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-35",
+
+        code: "OTH-035",
+        price: 111250,
+        available: true
+    },
+    {
+        id: "other-36",
+        category: "other",
+        name: "Other Pieces Gearbox Mount",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-36",
+
+        code: "OTH-036",
+        price: 114000,
+        available: true
+    },
+    {
+        id: "other-37",
+        category: "other",
+        name: "Other Pieces Clutch Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-37",
+
+        code: "OTH-037",
+        price: 116750,
+        available: true
+    },
+    {
+        id: "other-38",
+        category: "other",
+        name: "Other Pieces Clutch Slave Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-38",
+
+        code: "OTH-038",
+        price: 119500,
+        available: true
+    },
+    {
+        id: "other-39",
+        category: "other",
+        name: "Other Pieces Brake Master Cylinder",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-39",
+
+        code: "OTH-039",
+        price: 122250,
+        available: true
+    },
+    {
+        id: "other-40",
+        category: "other",
+        name: "Other Pieces Brake Booster",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-40",
+
+        code: "OTH-040",
+        price: 125000,
+        available: true
+    },
+    {
+        id: "other-41",
+        category: "other",
+        name: "Other Pieces Hub Assembly",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-41",
+
+        code: "OTH-041",
+        price: 127750,
+        available: true
+    },
+    {
+        id: "other-42",
+        category: "other",
+        name: "Other Pieces Axle Shaft",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-42",
+
+        code: "OTH-042",
+        price: 130500,
+        available: true
+    },
+    {
+        id: "other-43",
+        category: "other",
+        name: "Other Pieces Differential Gear",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-43",
+
+        code: "OTH-043",
+        price: 133250,
+        available: true
+    },
+    {
+        id: "other-44",
+        category: "other",
+        name: "Other Pieces Side Mirror",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-44",
+
+        code: "OTH-044",
+        price: 136000,
+        available: true
+    },
+    {
+        id: "other-45",
+        category: "other",
+        name: "Other Pieces Wiper Blade",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-45",
+
+        code: "OTH-045",
+        price: 138750,
+        available: true
+    },
+    {
+        id: "other-46",
+        category: "other",
+        name: "Other Pieces Door Handle",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-46",
+
+        code: "OTH-046",
+        price: 141500,
+        available: true
+    },
+    {
+        id: "other-47",
+        category: "other",
+        name: "Other Pieces Horn",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-47",
+
+        code: "OTH-047",
+        price: 144250,
+        available: true
+    },
+    {
+        id: "other-48",
+        category: "other",
+        name: "Other Pieces Battery",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-48",
+
+        code: "OTH-048",
+        price: 147000,
+        available: true
+    },
+    {
+        id: "other-49",
+        category: "other",
+        name: "Other Pieces Fuse Box",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-49",
+
+        code: "OTH-049",
+        price: 149750,
+        available: true
+    },
+    {
+        id: "other-50",
+        category: "other",
+        name: "Other Pieces Relay",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-50",
+
+        code: "OTH-050",
+        price: 17500,
+        available: true
+    },
+    {
+        id: "other-51",
+        category: "other",
+        name: "Other Pieces Temperature Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-51",
+
+        code: "OTH-051",
+        price: 20250,
+        available: true
+    },
+    {
+        id: "other-52",
+        category: "other",
+        name: "Other Pieces Oil Pressure Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-52",
+
+        code: "OTH-052",
+        price: 23000,
+        available: true
+    },
+    {
+        id: "other-53",
+        category: "other",
+        name: "Other Pieces Speed Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-53",
+
+        code: "OTH-053",
+        price: 25750,
+        available: true
+    },
+    {
+        id: "other-54",
+        category: "other",
+        name: "Other Pieces ABS Sensor",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-54",
+
+        code: "OTH-054",
+        price: 28500,
+        available: true
+    },
+    {
+        id: "other-55",
+        category: "other",
+        name: "Other Pieces Radiator Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-55",
+
+        code: "OTH-055",
+        price: 31250,
+        available: true
+    },
+    {
+        id: "other-56",
+        category: "other",
+        name: "Other Pieces Fuel Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-56",
+
+        code: "OTH-056",
+        price: 34000,
+        available: true
+    },
+    {
+        id: "other-57",
+        category: "other",
+        name: "Other Pieces Air Hose",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-57",
+
+        code: "OTH-057",
+        price: 36750,
+        available: true
+    },
+    {
+        id: "other-58",
+        category: "other",
+        name: "Other Pieces Bumper",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-58",
+
+        code: "OTH-058",
+        price: 39500,
+        available: true
+    },
+    {
+        id: "other-59",
+        category: "other",
+        name: "Other Pieces Grille",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-59",
+
+        code: "OTH-059",
+        price: 42250,
+        available: true
+    },
+    {
+        id: "other-60",
+        category: "other",
+        name: "Other Pieces Mudguard",
+        // PHOTO: replace this path/URL with this product’s own image.
+        image: "https://loremflickr.com/600/400/car,engine,spare,parts?lock=other-60",
+
+        code: "OTH-060",
+        price: 45000,
+        available: true
+    }
+];
 
 
-            const product = {
-
-                id:
-                category.id+"-"+i,
-
-                category:
-                category.id,
-
-                name:
-                category.name+" "+productName,
-
-                code:
-                category.name
-                .substring(0,3)
-                .toUpperCase()
-                +"-"+
-                String(i).padStart(3,"0"),
-
-                price:
-                15000+
-                ((i*2750)%135000),
-
-                available:
-                i%9!==0,
-
-                // A unique image URL for each product. The lock value keeps each product's image distinct.
-                image:
-                `https://loremflickr.com/600/400/automotive,car,parts?lock=${encodeURIComponent(category.id + "-" + i)}`
-
-            };
-
-
-            products.push(product);
-
-        }
-
+/* ========================================================
+   SAFE TEXT HELPER
+   Prevents product names/codes from breaking HTML rendering.
+======================================================== */
+function escapeHTML(value){
+    return String(value ?? "").replace(/[&<>"']/g, function(character){
+        const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        };
+        return entities[character];
     });
-
 }
-
-generateProducts();
 
 
 /* ========================================================
@@ -1580,9 +6772,18 @@ function displayCategories(){
         document.createElement("div");
 
         card.className="categoryCard";
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("aria-label", `Browse ${category.name} products`);
 
         card.onclick=()=>{
             openCategory(category.id);
+        };
+        card.onkeydown=(event)=>{
+            if(event.key === "Enter" || event.key === " "){
+                event.preventDefault();
+                openCategory(category.id);
+            }
         };
 
 
@@ -1590,7 +6791,9 @@ function displayCategories(){
 
             <img
                 src="${category.image}"
-                alt="${category.name}"
+                alt="${category.name} spare parts"
+                loading="lazy"
+                decoding="async"
             >
 
             <div class="categoryInfo">
@@ -1608,6 +6811,28 @@ function displayCategories(){
 
         `;
 
+        const categoryImage = card.querySelector("img");
+        const categoryImageFallbacks = [
+            "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=80"
+        ];
+        let categoryFallbackIndex = 0;
+        categoryImage.addEventListener("error", function () {
+            if (categoryFallbackIndex < categoryImageFallbacks.length) {
+                this.src = categoryImageFallbacks[categoryFallbackIndex++];
+                return;
+            }
+            // Keep the category card readable if external image hosting is unavailable.
+            this.onerror = null;
+            this.style.display = "none";
+            const imageArea = document.createElement("div");
+            imageArea.className = "missingCategoryImage";
+            imageArea.setAttribute("role", "img");
+            imageArea.setAttribute("aria-label", `${category.name} image unavailable`);
+            imageArea.textContent = `🚚 ${category.name}`;
+            imageArea.style.cssText = "height:190px;display:flex;align-items:center;justify-content:center;background:#eef2f7;color:#334155;font-size:22px;font-weight:700";
+            this.insertAdjacentElement("afterend", imageArea);
+        });
 
         grid.appendChild(card);
 
@@ -1635,6 +6860,7 @@ function openCategory(id){
         c => c.id===id
     );
 
+    if (!category) return;
 
     document.getElementById("homePage")
     .style.display="none";
@@ -1715,25 +6941,26 @@ function displayProducts(categoryId,search=""){
 
         card.innerHTML=`
 
-            <div class="productImage">
-
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                >
-
-
+            <div class="productInfo productTitle">
+                <h3>
+                    ${escapeHTML(product.name)}
+                </h3>
             </div>
 
+            <!-- PHOTO CODE IS DIRECTLY BELOW THE PRODUCT NAME IN THE PRODUCT DATABASE. -->
+            <div class="productImage" aria-label="Photo of ${escapeHTML(product.name)}">
+                <img
+                    src="${product.image}"
+                    alt="${escapeHTML(product.name)}"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
 
             <div class="productInfo">
 
-                <h3>
-                    ${product.name}
-                </h3>
-
                 <div class="code">
-                    Code: ${product.code}
+                    Code: ${escapeHTML(product.code)}
                 </div>
 
                 <div class="price">
@@ -1768,6 +6995,32 @@ function displayProducts(categoryId,search=""){
 
         `;
 
+
+        const productImage = card.querySelector(".productImage img");
+        // Try reliable hosted automotive photos if the product's own image URL
+        // or local file is unavailable. Avoid competing inline and JS onerror handlers.
+        const productImageFallbacks = [
+            "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=80"
+        ];
+        let productFallbackIndex = 0;
+        productImage.addEventListener("error", function () {
+            if (productFallbackIndex < productImageFallbacks.length) {
+                this.src = productImageFallbacks[productFallbackIndex++];
+                return;
+            }
+
+            // No broken-image icon if both the original and backup URLs fail.
+            const wrapper = this.closest(".productImage");
+            if (!wrapper) return;
+            wrapper.innerHTML = `
+                <div class="missingProductImage" role="img" aria-label="Photo unavailable for ${escapeHTML(product.name)}">
+                    <span class="photoIcon" aria-hidden="true">📷</span>
+                    <strong>${escapeHTML(product.name)}</strong>
+                    <small>Photo unavailable. Add a real image to images/products/${escapeHTML(product.id)}.jpg</small>
+                </div>
+            `;
+        });
 
         grid.appendChild(card);
 
@@ -1817,7 +7070,7 @@ function displayProducts(categoryId,search=""){
 function searchProducts(){
 
     const text =
-    document.getElementById("searchInput").value;
+    document.getElementById("searchInput").value.trim();
 
     displayProducts(
         currentCategory,
@@ -1831,8 +7084,33 @@ function searchProducts(){
    CART
 ======================================================== */
 
-let cartItems=[];
+function restoreCart(){
+    try {
+        const saved = JSON.parse(localStorage.getItem("hirwaSparepartsCart") || "[]");
+        if (!Array.isArray(saved)) return [];
+        return saved.map(savedItem => {
+            const product = products.find(item => item.id === savedItem.id);
+            const quantity = Number.parseInt(savedItem.quantity, 10);
+            return product && Number.isFinite(quantity) && quantity > 0
+                ? { ...product, quantity }
+                : null;
+        }).filter(Boolean);
+    } catch (error) {
+        return [];
+    }
+}
 
+let cartItems = restoreCart();
+
+function saveCart(){
+    try {
+        localStorage.setItem("hirwaSparepartsCart", JSON.stringify(
+            cartItems.map(item => ({ id: item.id, quantity: item.quantity }))
+        ));
+    } catch (error) {
+        // The cart still works for this visit if browser storage is unavailable.
+    }
+}
 
 function addToCart(id){
 
@@ -1870,10 +7148,23 @@ function addToCart(id){
     }
 
 
+    saveCart();
     updateCart();
 
     openCart();
 
+}
+
+
+function changeQuantity(id, change){
+    const item = cartItems.find(entry => entry.id === id);
+    if(!item) return;
+    item.quantity += change;
+    if(item.quantity <= 0){
+        cartItems = cartItems.filter(entry => entry.id !== id);
+    }
+    saveCart();
+    updateCart();
 }
 
 
@@ -1884,6 +7175,7 @@ function removeFromCart(id){
         item=>item.id!==id
     );
 
+    saveCart();
     updateCart();
 
 }
@@ -1933,10 +7225,11 @@ function updateCart(){
                     ${item.price.toLocaleString()} RWF
                 </p>
 
-                <small>
-                    Quantity:
-                    ${item.quantity}
-                </small>
+                <div class="quantityControls" aria-label="Quantity controls for ${item.name}">
+                    <button type="button" class="quantityButton" onclick="changeQuantity('${item.id}', -1)" aria-label="Decrease quantity">−</button>
+                    <span>Qty: ${item.quantity}</span>
+                    <button type="button" class="quantityButton" onclick="changeQuantity('${item.id}', 1)" aria-label="Increase quantity">+</button>
+                </div>
 
             </div>
 
@@ -2040,9 +7333,7 @@ function instantOrder(id){
     }
 
     const customerName =
-    prompt(
-        "Enter your full name:"
-    );
+    (prompt("Enter your full name:") || "").trim();
 
 
     if(!customerName){
@@ -2057,9 +7348,7 @@ function instantOrder(id){
 
 
     const phone =
-    prompt(
-        "Enter your phone number:"
-    );
+    (prompt("Enter your phone number (optional):") || "").trim();
 
 
     const message=
@@ -2205,10 +7494,8 @@ Thank you.`;
     encodeURIComponent(message);
 
 
-    window.open(
-        url,
-        "_blank"
-    );
+    // Use the current tab so the browser's popup blocker cannot stop the order.
+    window.location.href = url;
 
 }
 
@@ -2309,17 +7596,22 @@ function nextSlide(){
 }
 
 
-setInterval(
-    nextSlide,
-    5000
-);
-
-
 /* ========================================================
    INITIAL CART
 ======================================================== */
 
 updateCart();
+
+// Pause the hero slider while the page is hidden, then resume when visible.
+let heroTimer = setInterval(nextSlide, 5000);
+document.addEventListener("visibilitychange", () => {
+    if(document.hidden){
+        clearInterval(heroTimer);
+    }else{
+        clearInterval(heroTimer);
+        heroTimer = setInterval(nextSlide, 5000);
+    }
+});
 
 </script>
 
